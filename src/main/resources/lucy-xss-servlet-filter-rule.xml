@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns="http://www.navercorp.com/lucy-xss-servlet">
+	<defenders>
+		<defender>
+			<name>xssPreventerDefender</name>
+			<class>com.navercorp.lucy.security.xss.servletfilter.defender.XssPreventerDefender</class>
+		</defender>
+		
+		<defender>
+			<name>xssSaxFilterDefender</name>
+			<class>com.navercorp.lucy.security.xss.servletfilter.defender.XssSaxFilterDefender</class>
+			<init-param>
+				<param-value>lucy-xss-sax.xml</param-value>
+				<param-value>false</param-value>
+			</init-param>
+		</defender>
+		
+		<defender>
+			<name>xssFilterDefender</name>
+			<class>com.navercorp.lucy.security.xss.servletfilter.defender.XssFilterDefender</class>
+			<init-param>
+				<param-value>lucy-xss.xml</param-value>
+				<param-value>false</param-value>
+			</init-param>
+		</defender>
+	</defenders>
+	
+	
+	<default>
+		<defender>xssPreventerDefender</defender>
+	</default>
+	
+	
+	<url-rule-set>
+		<url-rule>
+			<url disable="true">/member/join/joinForm/emailAuth</url>
+		</url-rule>
+		<url-rule>
+			<url disable="true">/member/loginForm/loginCheck</url>
+		</url-rule>
+		
+		<url-rule>
+			<url disable="true">/admin/movie/insert/personally_insert/request</url>
+		</url-rule>
+		<url-rule>
+			<url disable="true">/admin/movie/modify/request</url>
+		</url-rule>
+		
+		<url-rule>
+			<url disable="false">/member/helpCenter/public/writeForm/write</url>
+			<params>
+				<param name="content" useDefender="true">
+					<defender>xssSaxFilterDefender</defender>
+				</param>
+			</params>
+		</url-rule>
+		<url-rule>
+			<url disable="false">/member/helpCenter/private/writeForm/write</url>
+			<params>
+				<param name="content" useDefender="true">
+					<defender>xssSaxFilterDefender</defender>
+				</param>
+			</params>
+		</url-rule>
+		<url-rule>
+			<url disable="false">/member/helpCenter/public/modifyForm/modify</url>
+			<params>
+				<param name="content" useDefender="true">
+					<defender>xssSaxFilterDefender</defender>
+				</param>
+			</params>
+		</url-rule>
+		<url-rule>
+			<url disable="false">/member/helpCenter/private/modifyForm/modify</url>
+			<params>
+				<param name="content" useDefender="true">
+					<defender>xssSaxFilterDefender</defender>
+				</param>
+			</params>
+		</url-rule>
+	</url-rule-set>
+</config>

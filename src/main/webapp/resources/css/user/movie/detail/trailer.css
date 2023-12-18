@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+/* trailer */
+.heading{
+	height:39px;
+	line-height:37px;
+	margin-bottom:20px;
+	padding-left:10px;
+	background-color:#e2e0d2;
+}
+
+.heading > h2{
+	display:inline-block;
+	margin:0px;
+	font-size:14px;
+}
+
+.heading > span{
+	font-size:13px;
+	color:#6b6b6b;
+}
+
+
+.list > ul{
+	overflow:hidden;
+	padding:0px;
+	margin-bottom:0px; margin-left:-10px;
+}
+
+.list > ul > li{
+	width:260px;
+	position:relative;
+	margin-left:10px; margin-bottom:30px;
+	text-align:left;
+	float:left;
+	list-style:none;
+	cursor:pointer;
+}
+
+.trailer_img{
+	width:100%; height:145px;
+}
+
+.play_btn{
+	width:44px; height:44px;
+	right:5px; bottom:28px;
+	position:absolute;
+	background:url("../../../../../resources/images/public/sprite_icon(cgv).png") no-repeat -60px -21px;
+}
+
+.trailer_title{
+	font-family:"GGV_Font01"; font-size:13px;
+}
+
+
+
+/* layer_player */
+.layer_player_bg{
+	width:100%; height:100%;
+	position:fixed;
+	top:0px; left:0px;
+	background-color:rgba(0, 0, 0, 0.8);
+}
+
+.layer_player_wrap{
+	width:100%; height:100%;
+	position:fixed;
+	top:0px; left:0px;
+}
+
+.layer_player{
+	width:1000px; height:695px;
+	position:absolute;
+	top:0px; bottom:0px; left:0px; right:0px;
+	margin:auto;
+	padding:15px 20px;
+	background-color:#101010;
+}
+
+
+.layer_player > h3{
+	position:relative;
+	margin:0px 0px 15px 0px;
+}
+
+.layer_player > h3 > .hd_icon{
+	display:inline-block;
+	padding:2px 4px;
+	font-size:11px;
+	border:1px solid #2a6fb6;
+	color:#2a6fb6;
+}
+
+.layer_player > h3 > .title{
+	font-size:15px;
+	color:white;
+}
+
+.layer_player > h3 > .close_btn{
+	width:18px; height:18px;
+	position:absolute;
+	right:0px;
+	border:none;
+	background:url("../../../../../resources/images/public/sprite_btn(cgv).png") no-repeat -72px -62px;
+	cursor:pointer;
+}
+
+
+.layer_player > .layer_player_left{
+	width:800px; height:450px;
+	padding-top:0px;
+	float:left;
+}
+
+
+.layer_player > .layer_player_right{
+	width:140px;
+	float:right;
+}
+
+.layer_player_right > .movie_info > a > img{
+	width:100%; height:200px;
+	display:block;
+}
+
+.layer_player_right > .movie_info > div{ margin-top:10px; }
+
+.movie_info .movie_grade{
+	width:21px; height:21px;
+    display:inline-block;
+    vertical-align:middle;
+    font-size:0px;
+    background:url("../../../../../resources/images/public/sprite_icon(cgv).png") no-repeat;
+}
+
+.movie_info .movie_title{
+	margin-left:-1px;
+	text-decoration:none;
+	font-family:"GGV_Font02"; font-size:13px;
+	color:#cccccc;
+}
+
+.movie_info .movie_genre, .movie_info .movie_premier{
+	font-size:12px;
+	color:#ababab;
+}
+
+.movie_info .reserveBtn{
+	width:57px; height:25px;
+	display:inline-block;
+	margin-top:10px;
+	background:url("../../../../../resources/images/public/sprite_btn(cgv).png") no-repeat 0px 0px;
+	background-position:-96px 0px;
+}
+
+
+.layer_player > .movie_description{
+	clear:both;
+	padding-top:20px;
+}
+
+.layer_player > .movie_description > span{
+	display:inline-block;
+	margin-bottom:10px;
+	font-size:14px; font-weight:bold;
+	color:#d0d0d0;
+}
+
+.layer_player > .movie_description > textarea{
+	width:800px; height:125px;
+	padding:5px;
+	border:1px solid #4d4d4d;
+	background-color:#101010;
+	font-size:13px;
+	color:#808080;
+	resize:none;
+}

@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+#container{
+	width:980px;
+	margin:100px auto 0px auto;
+	position:relative;
+}
+
+#container:after{
+	display:block;
+	content:"";
+    clear:both;
+}
+
+
+
+#contents{
+	width:780px;
+	float:left;
+	margin:0px 0px 50px 40px;
+}
+
+
+#contents > #title{
+	padding:10px;
+	overflow:hidden;
+	background-color:#edebe1;
+}
+
+#title > .title{
+	width:485px;
+	float:left;
+	margin:0px;
+	font-size:16px;
+}
+
+#title > .boxing{
+	width:275px;
+	float:right;
+	text-align:right;
+}
+
+#title > .boxing > p{
+	display:inline-block;
+	margin:0px;
+	font-size:14px;
+}
+
+#title > .boxing > p.hits{
+	margin-left:5px;
+}
+
+#title > .boxing > p > span{
+	font-weight:bold;
+}
+
+
+#contents > #content{
+	margin-bottom:20px;
+	padding:20px 10px;
+	border-bottom:1px solid #b4b3ab;
+}
+
+
+#contents > #comment_input{
+	height:70px;
+	overflow:hidden;
+	margin-bottom:20px;
+	border:1px solid gray;
+}
+
+#comment_input > textarea{
+	width:90%; height:100%;
+	float:left;
+	padding:10px;
+    border:none;
+    background-color:#fcfcfc;
+    font-size:13px;
+    resize:none;
+}
+
+#comment_input > button{
+	width:10%; height:100%;
+	float:right;
+	border:none;
+    border-left:1px solid gray;
+    font-size:14px; font-weight:bold;
+    color:white;
+    background-color:#e71a0f;
+    cursor:pointer;
+}
+
+
+#contents > #comment{
+	
+}
+
+#comment > ul{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+#comment > ul > .comment{
+	overflow:hidden;
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom:1px dashed #b4b3ab;
+}
+
+.comment > img{
+	width:60px;
+	float:left;
+	margin-right:20px;
+}
+
+.comment > div{
+	float:left;
+	font-size:14px;
+	color:#8a8a8a;
+}
+
+.comment > div > p{
+	width:700px;
+	margin:0px 0px 10px 0px;
+	white-space:pre-wrap;
+	font-size:15px !important;
+	color:black !important;
+}
+
+.comment > div > .update_comment_input{
+	width:700px; height:130px;
+	margin-bottom:10px;
+	padding:5px;
+	resize:none;
+}
+
+.comment .buttons{
+	display:inline-block;
+	margin-left:5px;
+}
+
+.comment .buttons > span{
+	padding:3px 4px;
+	border:1px solid #b8b8b8;
+	background-color:#f3f3f3;
+	font-size:12px;
+	color:black;
+	cursor:pointer;
+}
+
+
+#contents > #buttons{
+	overflow:hidden;
+}
+
+#buttons > button{
+	width:60px;
+	line-height:30px;
+	padding:2px;
+	border:none;
+	border-radius:5px;
+	background-color:#272727;
+	cursor:pointer;
+}
+
+#buttons > button.mine{
+	float:left;
+	margin-right:5px;
+}
+
+#buttons > button.list{
+	float:right;
+}
+
+#buttons > button > span{
+	display:block;
+	border:1px solid #5b5b58;
+	border-radius:5px;
+	font-size:12px;
+	color:white;
+}

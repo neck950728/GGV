@@ -1,0 +1,31 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<html>
+<head>
+	<script src="${pageContext.request.contextPath}/resources/js/user/module/footer.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/module/footer.css">
+</head>
+<body>
+	<div id="footer">
+		<div id="footer_banner" onclick="location.href='#'"><img src="${pageContext.request.contextPath}/resources/images/user/module/footer/footer_banner.png"></div>
+		<div id="copyright"><img src="${pageContext.request.contextPath}/resources/images/user/module/footer/copyright.png"></div>
+		<div id="footer_decoration"></div>
+	</div>
+	
+	<c:if test="${requestScope.requireMovingBanner == true}">
+		<div id="moving_banner">
+			<div id="banner_list">
+				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/user/module/footer/moving_banner01.gif"></a>
+				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/user/module/footer/moving_banner02.gif"></a>
+				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/user/module/footer/moving_banner03.gif"></a>
+				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/user/module/footer/moving_banner04.gif"></a>
+				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/user/module/footer/moving_banner05.gif"></a>
+				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/user/module/footer/moving_banner06.gif"></a>
+			</div>
+			<div id="top_btn">
+				<img src="${pageContext.request.contextPath}/resources/images/user/module/footer/top_btn.png">
+			</div>
+		</div>
+	</c:if>
+</body>
+</html>

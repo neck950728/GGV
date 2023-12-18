@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+@font-face{ font-family:"GGV_Font01"; src:url("../../../resources/font/나눔바른고딕.TTF"); }
+@font-face{ font-family:"GGV_Font02"; src:url("../../../resources/font/드림고딕.TTF"); }
+
+#container{
+	position:absolute;
+	top:50%; left:50%;
+	transform:translate(-50%, -50%);
+	text-align:center;
+}
+
+
+#container > p{
+	font-family:"GGV_Font01";
+	font-size:25px;
+}
+
+
+#container > button{
+	width:330px;
+	margin-top:50px; padding:2px;
+	border:none;
+	background-color:#e71a0f;
+	cursor:pointer;
+}
+
+button > span{
+	display:block;
+	line-height:55px;
+	border:1px solid #f07469;
+	font-family:"GGV_Font02"; font-size:19px; color:white;
+}

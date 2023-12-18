@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+#comment{
+	width:680px;
+	margin:0px auto;
+}
+
+
+
+/* ====================================== ● chart ● ====================================== */
+.chart{
+	height:300px;
+	overflow:hidden;
+	border:1px solid black;
+}
+
+
+
+/* ------------------------------------------- chart_type ------------------------------------------- */
+.chart > #chart_type{
+	height:15.2%;
+	margin-left:4px;
+	text-align:center;
+}
+
+#chart_type > a{
+	height:30px;
+	display:inline-block;
+	background:url("../../../../../resources/images/user/movie/detail/comment/sprite_icon.png") no-repeat;
+	font-size:0px;
+	cursor:pointer;
+}
+
+#chart_type > #score_distribution{
+	width:90px;
+}
+
+#chart_type > #genderAndAgeGroup_distribution{
+	width:94px;
+}
+/* -------------------------------------------------------------------------------------------------- */
+
+
+
+/* ------------------------------------------------ chart_area ------------------------------------------------ */
+.chart > #chart_area{
+	height:84.8%;
+	overflow:hidden;
+}
+
+#chart_area > .chart_area{
+	width:50%; height:100%;
+	position:relative;
+	float:left;
+	overflow:hidden;
+}
+
+
+
+/* scoreDistributionChart_area */
+#chart_area > #scoreDistributionChart_area{
+	height:100%;
+}
+
+#scoreDistributionChart_area > #scoreDistributionChart{
+	height:100%;
+}
+
+#scoreDistributionChart text[fill='#b33945']{
+	fill:rgb(255, 81, 98);
+	font-weight:bold;
+	font-size:12px;
+}
+
+#scoreDistributionChart rect[width='1'][height='12']{
+	display:none;
+}
+
+
+
+/* genderDistributionChart_area */
+#chart_area > #genderDistributionChart_area{
+	padding:26px 40px 35px 40px;
+}
+
+
+#genderDistributionChart_area > .score{
+	margin-top:60px;
+	text-align:center;
+}
+
+.score .star_icon{
+	width:15px; height:14px;
+	display:inline-block;
+	background:url("../../../../../resources/images/public/sprite_icon(naver).png") no-repeat -1px -690px;
+	font-size:0px;
+}
+
+.score em{
+	margin:0px 0px 0px -2px;
+	font-size:16px;
+	color:black;
+	font-weight:bold;
+}
+
+.score .gender{
+	font-weight:bold; font-size:14px;
+}
+
+
+#genderDistributionChart_area > #man_score{
+	float:left;
+}
+
+#man_score > .gender_icon{
+	width:30px; height:38px;
+	display:inline-block;
+	background:url("../../../../../resources/images/user/movie/detail/comment/sprite_icon.png") no-repeat 0px -262px;
+	font-size:0px;
+}
+
+
+#genderDistributionChart_area > #woman_score{
+	float:right;
+}
+
+#woman_score > .gender_icon{
+	width:37px; height:38px;
+	display:inline-block;
+	background:url("../../../../../resources/images/user/movie/detail/comment/sprite_icon.png") no-repeat 0px -311px;
+	font-size:0px;
+}
+
+
+#genderDistributionChart_area > .genderDistributionChart_boxing{
+	position:absolute;
+	left:69px;
+}
+
+.genderDistributionChart_boxing > #genderDistributionChart{
+	width:200px; height:200px;
+}
+
+#genderDistributionChart > .notExistsComment{
+	position:absolute;
+	top:33px; left:33px;
+}
+
+.genderDistributionChart_boxing > .title{
+	position:absolute;
+	left:40.9%; top:47.5%;
+	font-family:"GGV_Font02"; font-size:13px;
+	color:#353535;
+}
+
+
+#genderDistributionChart_area > .boundary{
+	width:1px; height:180px;
+	position:absolute;
+	top:35px; right:0px;
+	border-right:1px solid #cecece;
+}
+
+
+
+/* ageGroupDistributionChart_area */
+#chart_area > #ageGroupDistributionChart_area{
+	padding-left:23px;
+}
+
+
+#ageGroupDistributionChart_area > .score{
+	float:left;
+	margin-top:50px;
+}
+
+.score > ul{
+	padding:0px; margin:0px;
+}
+
+.score > ul > li{
+	width:150px;
+	padding:9px 0px;
+	text-align:center;
+	list-style:none;
+	border-bottom:1px solid #909090;
+}
+
+.score > ul > li > strong{
+	width:68px;
+	display:inline-block;
+	margin-right:10px;
+	font-size:15px;
+}
+
+
+#ageGroupDistributionChart_area > .ageGroupDistributionChart_boxing{
+	position:absolute;
+	right:-17px;
+	margin-top:-1px;
+}
+
+.ageGroupDistributionChart_boxing > #ageGroupDistributionChart{
+	width:210px; height:210px;
+}
+
+#ageGroupDistributionChart > .notExistsComment{
+	position:absolute;
+	top:38px; left:38px;
+}
+
+.ageGroupDistributionChart_boxing > .title{
+	position:absolute;
+	left:41.2%; top:48%;
+	font-family:"GGV_Font02"; font-size:13px;
+	color:#353535;
+}
+
+.ageGroupDistributionChart_boxing > .ageGroup_legend{
+	height:27px;
+	margin-left:45px; margin-top:-30px;
+	background:url("../../../../../resources/images/user/movie/detail/comment/sprite_icon.png") no-repeat 0px -411px;
+}
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ==================================================================================== */
+
+
+
+/* ● iframe ● */
+iframe{
+	width:680px;
+	margin-top:40px;
+	border:none;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.aopMapper">
+	
+	<select id="selectTotalReservedCount" resultType="int">
+		SELECT SUM(personnel) FROM reserve
+	</select>
+	
+	<select id="selectReservedMovieCodeList" resultType="String">
+		<![CDATA[ SELECT DISTINCT movie_code FROM screening_info WHERE remaining_seat_count < 100 ]]>
+	</select>
+	
+	<select id="selectReservedMovieScreeningInfoList" parameterType="String" resultType="ScreeningInfoDTO">
+		<![CDATA[ SELECT * FROM screening_info WHERE movie_code = #{movie_code} AND remaining_seat_count < 100 ]]>
+	</select>
+	
+	
+	<select id="checkMovieReserveRate" resultType="String">
+		<![CDATA[ SELECT code FROM movie WHERE reserveRate > 0 ]]>
+	</select>
+	
+	<select id="checkMovieReserveCount" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM reserve WHERE movie_code = #{movie_code}
+	</select>
+	
+	
+	<update id="updateReserveRate" parameterType="java.util.Map">
+		UPDATE movie SET reserveRate = #{reserveRate} WHERE code = #{movie_code}
+	</update>
+</mapper>

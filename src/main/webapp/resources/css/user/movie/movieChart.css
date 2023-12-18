@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+#container{
+	width:940px;
+	overflow:hidden;
+	margin:40px auto 0px auto;
+}
+
+
+
+/* title */
+#title{
+	overflow:hidden;
+	border-bottom:3px solid black;
+}
+
+#title > span{
+	display:block;
+	float:left;
+	font-family:"GGV_Font02"; font-size:35px;
+}
+
+#title > div{ float:right; margin-top:15px; }
+#title > div > a{ text-decoration:none; font-family:"GGV_Font02"; }
+
+
+
+/* movieChart, preMovieChart */
+#movieChart > ul, #preMovieChart > ul{
+	overflow:hidden;
+	margin:0px;
+	padding:30px 0px 25px 0px;
+	border-bottom:3px solid black;
+}
+
+#movieChart > ul{
+	padding:30px 0px 25px 0px;
+}
+
+#preMovieChart > ul{
+	padding:0px;
+}
+
+#preMovieChart > ul > h1{
+	font-size:25px; margin:25px 0px;
+}
+
+#movieChart > ul > li, #preMovieChart > ul > li{
+	width:190px;
+	margin-right:60px;
+	float:left;
+	list-style:none;
+}
+
+#preMovieChart > ul > li{
+	margin-bottom:30px;
+}
+
+.endOfLine{
+	margin-right:0px !important;
+}
+
+
+#movieChart .rank, #preMovieChart .rank{
+	height:40px;
+	line-height:28px;
+	margin-bottom:5px;
+	text-align:center;
+	border:6px solid black;
+	background-color:red;
+}
+
+.rank > span{
+	font-family:"GGV_Font02";
+	color:white;
+}
+
+#movieChart .rank > span{
+	font-size:19px;
+}
+
+#preMovieChart .rank > .txt{ font-size:18px; }
+#preMovieChart .rank > .num{ font-size:20px; }
+
+
+#movieChart .poster, #preMovieChart .poster{
+	height:270px;
+	border:6px solid black;
+}
+
+.poster > a{
+	height:100%;
+}
+
+.poster > a > img{
+	width:100%; height:100%;
+}
+
+
+#movieChart .movie_info, #preMovieChart .movie_info{
+	overflow:hidden; margin-bottom:7px;
+}
+
+.movie_info .grade{
+	width:25px; height:25px;
+	display:inline-block;
+	vertical-align:text-top;
+	font-size:0px;
+	background:url("../../../../resources/images/user/movie/movieChart/grade_icon.png") no-repeat;
+}
+
+.movie_info .title{
+	margin-left:-1px;
+	text-decoration:none;
+	font-family:"GGV_Font02"; font-size:14px;
+	color:black;
+}
+
+.movie_info .reserveRate_label, .movie_info .reserveRate, .movie_info .premier{
+	font-family:"GGV_Font03"; font-weight:bold;
+}
+
+.reserveRate_label{
+	font-size:13px;
+	color:#505050;
+}
+
+.reserveRate{
+	font-size:13px;
+	color:black;
+}
+
+.premier{
+	font-size:12px;
+	color:#505050;
+}
+
+.reserveBtn{
+	float:right;
+	margin-top:4px;
+}
+
+
+#movieChart .like, #preMovieChart .like{
+	text-align:center;
+}
+
+.like > button{
+	width:23px; height:23px;
+	vertical-align:middle;
+	padding:0px;
+	background:url("../../../../resources/images/public/sprite_icon(cgv).png") -60px -66px no-repeat;
+	border:none;
+	font-size:0px;
+	cursor:pointer;
+}
+
+.like > .on{
+	background:url("../../../../resources/images/public/sprite_icon(cgv).png") -83px -66px no-repeat;
+}
+
+.like > .count{
+	display:inline-block;
+	height:25px;
+	line-height:23px;
+	position:relative;
+}
+
+.like > .count > span{
+	display:inline-block;
+	padding:0px 4px;
+	border:1px solid #999999;
+	font-size:14px;
+	color:#717171;
+}
+
+.like > .count > i{
+	width:5px; height:5px;
+	display:block;
+	position:absolute;
+	background:#fdfcf0 url("../../../../resources/images/public/sprite_corner.png") no-repeat;
+}
+
+.like > .count > .corner-LT{ left:0px; top:0px; background-position:0px 0px; }
+.like > .count > .corner-RT{ right:0px; top:0px; background-position:-5px 0px; }
+.like > .count > .corner-LB{ left:0px; bottom:0px; background-position:0px -5px; }
+.like > .count > .corner-RB{ right:0px; bottom:0px; background-position:-5px -5px; }
+
+.like > .count > .corner-arrow{
+	width:4px; height:6px;
+	left:-3px; top:50%;
+	margin-top:-4px;
+	background-position:-10px 0px;	
+}
+
+
+
+/* banner */
+.banner > div{
+	height:421px;
+	padding:2px;
+	border:3px solid black;
+	background-color:#222221;
+}
+
+.banner .banner_img{
+	text-align:center;
+	padding:10px 0px;
+	border:1px solid black;
+}
+
+.banner .banner_txt{
+	width:150px;
+	margin:21px auto;
+}
+
+.banner .banner_txt > img{ vertical-align:middle; }
+
+.banner .banner_txt > span{
+	font-family:"GGV_Font02"; font-size:15px;
+	color:white;
+}
+
+
+
+/* viewMore_btn */
+#viewMore_btn{
+	float:right;
+	margin-top:5px;
+	border:none;
+	background-color:#fdfcf0;
+	cursor:pointer;
+}
+
+#viewMore_btn > span{ font-family:"GGV_Font02"; font-size:13px; }
+#viewMore_btn > img{ vertical-align:middle; }

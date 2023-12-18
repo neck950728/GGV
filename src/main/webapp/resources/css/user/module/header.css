@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@font-face{ font-family:"GGV_Font01"; src:url("../../../../resources/font/나눔바른고딕.TTF"); }
+@font-face{ font-family:"GGV_Font02"; src:url("../../../../resources/font/드림고딕.TTF"); }
+
+*{ box-sizing:border-box; }
+body{ min-width:1349px; background:#fdfcf0; }
+
+#header{
+	overflow:hidden;
+	background:url("../../../../resources/images/public/header_bg.gif") repeat-x;
+}
+
+#header_center_align_wrap{ width:980px; margin:0px auto; }
+
+
+/* ● gnb ● */
+#gnb{ margin-top:5px; text-align:right; }
+#gnb > span{ font-size:13px; color:#9e9e9e; }
+
+#gnb > a{
+	text-decoration:none;
+	font-family:"GGV_Font01"; font-size:15px;
+	color:#424242;
+}
+
+
+/* --------------------------------------- ● im_wrapper ● --------------------------------------- */
+#im_wrap{ overflow:hidden; padding:33px 0px 21px 0px; }
+#im_left, #im_center, #im_right{ float:left; }
+
+
+/* im_left */
+#im_left{ margin:-2px 245px 0px 0px; }
+
+
+/* im_center */
+#im_center{ margin-right:165px; }
+#im_center > img{ display:block; }
+#im_center .menu_wrap{ margin:8px 0px 0px 12px; padding:0px; overflow:hidden; text-align:center; }
+
+#im_center .menu{
+	width:48px; height:30px;
+	float:left;
+	list-style:none;
+	font-family:"GGV_Font02"; font-size:18px;
+}
+
+.menu > a{ text-decoration:none; color:black; }
+
+.sub_menu_wrap{
+	width:175px;
+	position:absolute;
+	padding:3px;
+	z-index:2;
+	display:none;
+	background:url("../../../../resources/images/user/module/header/sub_menu_bg.png") repeat;
+}
+
+.sub_menu_wrap > i{
+	width:19px; height:10px;
+	position:absolute;
+	left:45%; top:-10px;
+	background:url("../../../../resources/images/user/module/header/sub_menu_arrow.png") no-repeat;
+}
+
+.sub_menu{ padding:10px 15px; border:2px solid white; }
+.sub_menu > ul{ margin:0px; padding:0px; }
+.sub_menu li{ padding:6px 0px; list-style:none; text-align:left; font-size:14px; }
+.sub_menu a{ text-decoration:none; color:white; }
+
+
+/* im_right */
+#im_right{ position:relative; margin-top:37px; }
+
+#im_right > #search{
+	height:24px;
+}
+
+#search > input{
+	width:200px; height:100%;
+	padding-left:3px;
+	font-size:13px;
+}
+
+#search > button{
+	height:100%;
+	position:absolute;
+	top:0px; right:0px;
+	border:none;
+	background-color:#e71a0f;
+	font-family:"GGV_Font02"; font-size:14px;
+	color:#ffffff;
+}
+/* ---------------------------------------------------------------------------------------------- */

@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+#container{
+	width:980px;
+	margin:0px auto;
+}
+
+
+
+#title{
+	margin-top:40px; margin-bottom:25px;
+	padding:0px;
+	padding-bottom:10px;
+	border-bottom:2px solid black;
+	font-family:"GGV_Font01";
+	font-size:25px;
+}
+
+
+
+#content{
+	overflow:hidden;
+}
+
+#content > .img{
+	width:420px; height:420px;
+	float:left;
+}
+
+#content > .content{
+	width:530px;
+	float:left;
+}
+
+#content > .content > .price{
+	margin:0px;
+	padding-bottom:10px;
+	border-bottom:1px solid #d6d6d6;
+	font-size:25px; font-weight:500;
+}
+
+
+#content > .content > .add_info{
+	border-bottom:1px solid #d6d6d6;
+}
+
+.add_info dt{
+	width:80px;
+	display:inline-block;
+	font-size:15px; font-weight:600;
+}
+
+.add_info dd{
+	display:inline-block;
+	margin-left:30px;
+	font-size:15px;
+}
+
+
+#content > .content > .calculate{
+	
+}
+
+.calculate > h3{
+	font-size:15px;
+}
+
+.calculate > .button > div:first-child{
+	overflow:hidden;
+	padding-bottom:15px;
+	margin-bottom:10px;
+	border-bottom:2px solid #adadad;
+}
+
+.calculate > .button > div:last-child{
+	text-align:right;
+}
+
+.calculate > .button a{
+	cursor:pointer;
+}
+
+.calculate > .button .minus_button{
+	width:28px; height:28px;
+	display:inline-block;
+	float:left;
+	border:1px solid #bdc1c8;
+	background:url("../../../../../resources/images/user/member/culture/detail/minus_button.png") center center no-repeat;
+}
+
+.calculate > .button .plus_button{
+	width:28px; height:28px;
+	display:inline-block;
+	float:left;
+	border:1px solid #bdc1c8;
+	background:url("../../../../../resources/images/user/member/culture/detail/plus_button.png") center center no-repeat;
+}
+
+.calculate > .button .count{
+	width:43px; height:28px;
+	display:inline-block;
+	float:left;
+	line-height:28px;
+	text-align:center;
+	border-top:1px solid #bdc1c8;
+	border-bottom:1px solid #bdc1c8;
+}
+
+.calculate > .button .buy_price{
+	float:right;
+	font-size:20px;
+}
+
+.calculate > .button .cart{
+	width:60px; height:60px;
+	display:inline-block;
+	background:#fb4357 url("../../../../../resources/images/user/member/culture/detail/cart_button.png") center center no-repeat;
+}
+
+.calculate > .button .payment{
+	width:210px; height:60px;
+	display:inline-block;
+	line-height:60px;
+	vertical-align:top;
+	text-align:center;
+	background-color:#373e46;
+	font-size:15px; font-weight:500;
+	color:white;
+}
+
+
+
+#description{
+	padding:30px;
+	border:1px solid #e2e2e2;
+	background-color:#fcfcfc;
+	font-size:17px; font-weight:400;
+}

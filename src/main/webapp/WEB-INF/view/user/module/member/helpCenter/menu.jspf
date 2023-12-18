@@ -1,0 +1,25 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var g_type = "${type}";
+	</script>
+	<script src="${pageContext.request.contextPath}/resources/js/user/module/member/helpCenter/menu.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/module/member/helpCenter/menu.css">
+</head>
+<body>
+	<ul id="menu">
+		<li class="public">
+			<a href="${pageContext.request.contextPath}/member/helpCenter/public">메인</a>
+			<i></i>
+		</li>
+		<li class="private">
+			<a href="${pageContext.request.contextPath}/member/helpCenter/private">1:1 문의</a>
+			<i></i>
+		</li>
+	</ul>
+</body>
+</html>

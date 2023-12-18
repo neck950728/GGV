@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+@font-face{ font-family:"GGV_Font"; src:url("../../../../../../resources/font/드림고딕.TTF"); }
+
+*{ box-sizing:border-box; }
+body{ min-width:1349px; background:#fdfcf0; }
+
+.joinFormWrap{
+	width:555px;
+	margin:30px auto 40px auto;
+}
+
+.joinFormWrap input{
+	width:450px; height:45px;
+	margin-top:5px;
+	padding-left:7px;
+	border:2px solid #b5b5b5;
+	background-color:#fdfcf0;
+}
+
+.joinFormWrap span{
+	font-family:"GGV_Font"; font-size:16px;
+}
+
+.center_align_wrap{ margin-left:60px; }
+
+
+/* logo */
+.joinFormWrap .logo{ 
+	margin-left:130px;
+	margin-bottom:40px;
+}
+
+
+/* id & pw */
+.instantly_check{ overflow:hidden; }
+.instantly_check div{ float:left; }
+.inputField_area{ margin-right:7px; }
+.check_icon_area{ height:50px; line-height:76px; }
+
+
+/* gender */
+.joinFormWrap .gender_radioBtn_area{
+	width:450px;
+	overflow:hidden;
+	margin-top:5px;
+	border:2px solid #b5b5b5;
+}
+
+.gender_radioBtn_area > label{
+	width:50%; height:45px;
+	display:block;
+	float:left;
+	text-align:center;
+	line-height:45px;
+	cursor:pointer;
+	font-family:"GGV_Font"; font-size:14px;
+}
+
+.gender_radioBtn_area > .man_label{ border-right:1px solid #b5b5b5; }
+.gender_radioBtn_area > .woman_label{ border-left:1px solid #b5b5b5; }
+.gender_radioBtn_area > .on{ background-color:#fffcbf; }
+.gender_radioBtn_area > input{ display:none; }
+
+
+/* phone */
+.phone_auth_area{
+	overflow:hidden;
+	margin-top:5px;
+}
+
+.phone_auth_area > .phone_inputField{
+	width:325px;
+	margin-top:0px; margin-right:5px;
+	float:left;
+}
+
+.phone_auth_area > .getAuthNum{
+	width:120px; height:45px;
+	line-height:39px;
+	padding:2px;
+	float:left;
+	border:none;
+	background-color:#e71a0f;
+	cursor:pointer;
+}
+
+.phone_auth_area > .getAuthNum > span{
+	display:block;
+	border:1px solid #f07469;
+	font-family:"GGV_Font"; font-size:15px;
+	color:white;
+}
+
+.phone_auth_area > .authNum_inputField{
+	float:left; opacity:0.4;
+}
+
+
+/* join_btn */
+.joinFormWrap .join_btn{ margin-top:15px; }
+
+.join_btn > button{
+	width:450px;
+	padding:2px;
+	border:none;
+	background-color:#e71a0f;
+	cursor:pointer;
+}
+
+.join_btn span{
+	display:block;
+	line-height:55px;
+	border:1px solid #f07469;
+	font-family:"GGV_Font"; font-size:19px; color:white;
+}
+
+
+/* Tooltip */
+.tooltip{
+	display:none;
+	position:absolute;
+	border:1px solid #e4e4cc;
+	background:#fdfcea;
+	box-shadow:8px 8px 8px #6b6a53;
+}
+ 
+.tooltip > span{ font-family:"GGV_Font"; font-size:13px; }
+
+#id_tooltip{
+	width:416px; height:68px;
+	padding:2px;
+	line-height:18px;
+}
+
+#pw_tooltip{
+	width:429px; height:47px;
+	padding:2px;
+	line-height:18px;
+}
+
+#email_tooltip{
+	width:314px; height:30px;
+	padding:5px;
+}
+
+
+/* error_msg */
+.error_msg{
+	display:none;
+	margin-top:4px;
+	font-size:14px !important;
+	color:red;
+}
+
+
+/* alert_dialog */
+#alert_dialog{ text-align:center; }

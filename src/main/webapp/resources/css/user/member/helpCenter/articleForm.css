@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+body{
+	background-color:#fdfcf0 !important;
+}
+
+
+#container{
+	width:1005px;
+	margin:100px auto 0px auto;
+	position:relative;
+}
+
+#container:after{
+	display:block;
+	content:"";
+    clear:both;
+}
+
+
+#contents{
+	float:left;
+	margin:0px 0px 50px 50px;
+}
+
+#contents > form:after{
+	display:block;
+	content:"";
+    clear:both;
+}
+
+#contents > form > input[name="title"]{
+	height:35px;
+	margin-bottom:20px;
+	border:none;
+	border-bottom:1px solid #d2d2d2;
+	background-color:#fdfcf0;
+}
+
+#contents > form > input[name="title"]:focus{
+	outline:none;
+}
+
+#contents > form > input[type="button"]{
+	width:75px; height:40px;
+	float:right;
+	margin-top:10px;
+	padding:0px;
+	border:none;
+	background-color:#e71a0f;
+	font-size:13px; font-weight:bold;
+	color:white;
+	cursor:pointer;
+}
+
+
+.note-editor{
+	background-color:#fdfcf0 !important;
+}

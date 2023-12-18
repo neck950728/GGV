@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+#container{ margin-top:100px; margin-bottom:60px; }
+#container span{ font-family:"GGV_Font02"; }
+
+
+.welcome_wrap{
+	width:757px;
+	margin:0px auto 45px auto;
+	overflow:hidden;
+}
+
+.welcome_wrap > .left{ float:left; }
+.welcome_wrap > .right{ float:left; margin-top:35px; margin-left:30px; }
+
+.button_wrap{
+	width:277px;
+	margin:auto;
+}
+
+.button_wrap > .main_button, .button_wrap > .login_button{
+	width:130px;
+	padding:2px;
+	border:none; border-radius:10px;
+	background-color:#e71a0f;
+	cursor:pointer;
+}
+
+.main_button > span, .login_button > span{
+	display:block;
+	line-height:45px;
+	border:1px solid #f07469; border-radius:10px;
+	font-family:"GGV_Font02"; font-size:15px; color:white;
+}

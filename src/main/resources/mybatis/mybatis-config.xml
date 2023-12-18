@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+	
+	<typeAliases>
+		<typeAlias type="admin.movie.bean.MovieDTO" alias="MovieDTO"></typeAlias>
+		<typeAlias type="admin.movie.bean.StillCutDTO" alias="StillCutDTO"></typeAlias>
+		<typeAlias type="admin.movie.bean.TrailerDTO" alias="TrailerDTO"></typeAlias>
+		<typeAlias type="admin.movie.bean.DirectorDTO" alias="DirectorDTO"></typeAlias>
+		<typeAlias type="admin.movie.bean.ActorDTO" alias="ActorDTO"></typeAlias>
+		<typeAlias type="admin.movie.bean.ScreeningInfoDTO" alias="ScreeningInfoDTO"></typeAlias>
+		
+		<typeAlias type="movie.bean.ReserveDTO" alias="ReserveDTO"></typeAlias>
+		
+		<typeAlias type="movie.bean.CommentDTO" alias="CommentDTO"></typeAlias>
+		<typeAlias type="movie.bean.CommentVoteDTO" alias="CommentVoteDTO"></typeAlias>
+		
+		
+		<typeAlias type="member.bean.TempMemberDTO" alias="TempMemberDTO"></typeAlias>
+		<typeAlias type="member.bean.MemberDTO" alias="MemberDTO"></typeAlias>
+		<typeAlias type="member.bean.WishListDTO" alias="WishListDTO"></typeAlias>
+		<typeAlias type="member.bean.WatchedMovieDTO" alias="WatchedMovieDTO"></typeAlias>
+		<typeAlias type="member.bean.CartDTO" alias="CartDTO"></typeAlias>
+		<typeAlias type="member.bean.PaymentHistoryDTO" alias="PaymentHistoryDTO"></typeAlias>
+		<typeAlias type="member.bean.HelpCenterDTO" alias="HelpCenterDTO"></typeAlias>
+		<typeAlias type="member.bean.HelpCenterCommentDTO" alias="HelpCenterCommentDTO"></typeAlias>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mybatis/adminMovie-mapping.xml" />
+		<mapper resource="mybatis/movie-mapping.xml" />
+		<mapper resource="mybatis/member-mapping.xml" />
+		<mapper resource="mybatis/aop-mapping.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+#cast{
+	width:700px;
+	margin:0px auto;
+}
+
+
+#cast .heading{
+	height:39px;
+	line-height:39px;
+	margin:0px 0px 10px 0px;
+	padding-left:10px;
+	background-color:#e2e0d2;
+	font-size:15px;
+}
+
+
+#cast > .director{
+	margin-bottom:40px;
+}
+
+#cast > .actor{
+	overflow:hidden;
+}
+
+
+#cast ul{
+	overflow:hidden;
+	margin:0px 0px 0px -30px; padding:0px;
+}
+
+#cast ul > li{
+	height:159px;
+	float:left;
+	margin-left:30px;
+	list-style:none;
+}
+
+
+#cast ul > li > img{
+	width:111px; height:139px;
+	margin-right:10px;
+}
+
+
+#cast ul > li > .boxing{
+	width:209px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+#cast .boxing > span{
+	display:inline-block;
+	font-size:13px;
+}
+
+#cast .boxing > .koName{
+	display:inline-block;
+	margin:0px;
+	font-size:15px;
+}
+
+#cast .boxing > .enName{
+	color:#8a8a8a;
+}
+
+#cast .boxing > .role{
+	color:red;
+}
+
+
+#cast > .actor > .expand_btn{
+	width:67px; height:24px;
+	float:right;
+	border:none;
+	background:url("../../../../../resources/images/public/sprite_btn(naver).png") no-repeat -207px -62px;
+	font-size:0px;
+	cursor:pointer;
+}

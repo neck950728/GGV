@@ -1,0 +1,821 @@
+@charset "UTF-8";
+
+#container{
+	width:1214px;
+	overflow:hidden;
+	margin:60px auto 0px auto;
+}
+
+.hidden{
+	display:none;
+}
+
+
+
+/* ● banner ● */
+.banner{
+	float:left;
+}
+
+.banner.left{
+	margin-right:65px;
+}
+
+.banner.right{
+	margin-left:65px;
+}
+
+
+
+/* ================================== ● ticket ● ================================== */
+#ticket{
+	float:left;
+	border-right:2px solid #d4d3c9;
+	border-bottom:2px solid #d4d3c9;
+	background-color:#f2f0e4;
+}
+
+#ticket > div{
+	border-left:2px solid #d4d3c9;
+}
+
+#ticket > div > .title{
+	height:33px;
+	background:#333333 url("../../../../../resources/images/public/titles.png") no-repeat;
+	font-size:0px;
+}
+
+#ticket > div ul{
+	margin:0px; padding:0px;
+	list-style:none;
+}
+
+
+
+/* ------------------------------------- movie ------------------------------------- */
+#ticket > .movie{
+	width:280px;
+	float:left;
+}
+
+.movie > .title{
+	margin-bottom:15px;
+	background-position:50% 8px !important;
+}
+
+.movie > ul{
+	height:485px;
+}
+
+.movie > ul li{
+	margin-left:20px;
+	padding:7px 0px;
+	cursor:pointer;
+}
+
+.movie > ul li:first-child{
+	padding-top:0px;
+}
+
+
+.movie > ul .selected{
+	margin-left:12px; margin-right:12px;
+	padding:1px;
+	background-color:#3e3e3e;
+	border:1px solid black;
+}
+
+.movie > ul .selected > div{
+	padding:3px 5px;
+	border:1px solid #5c5c5c;
+	color:white;
+}
+
+
+.movie > ul .grade{
+	width:21px; height:21px;
+	display:inline-block;
+	margin-right:5px;
+	vertical-align:middle;
+	background:url("../../../../../resources/images/public/sprite_icon(cgv).png") no-repeat;
+}
+
+.movie > ul .movie_title{
+	width:194px;
+	display:inline-block;
+	font-size:13px; font-weight:bold;
+}
+
+
+.movie > ul .mCSB_scrollTools .mCSB_dragger{
+	height:100px !important;
+}
+
+.movie > ul .mCSB_scrollTools .mCSB_draggerRail{
+	background-color:#f2f0e4 !important;
+}
+/* --------------------------------------------------------------------------------- */
+
+
+
+/* -------------------------------------------- theater -------------------------------------------- */
+#ticket > .theater{
+	float:left;
+}
+
+.theater > .title{
+	background-position:50% -25px !important;
+}
+
+.theater > ul{
+	width:110px; height:500px;
+	float:left;
+}
+
+.theater > ul > li{
+	height:33px;
+	line-height:32px;
+	margin-bottom:2px;
+	font-size:13px;
+	cursor:pointer;
+}
+
+.theater > ul > li > span{
+	padding-left:7px;
+	font-weight:bold;
+}
+
+
+.theater > .main_region > li{
+	padding-right:12px;
+	text-align:right;
+	background-color:#e6e4d9;
+}
+
+.main_region > li > i{
+	font-style:normal;
+}
+
+.main_region  > li > em{
+	font-style:normal;
+}
+
+.main_region > .selected{
+	background:#e6e4d9 url("../../../../../resources/images/public/arrow_icon.png") no-repeat 97% center;
+}
+
+.main_region > .on{
+	background-color:#b5b3ab !important;
+}
+
+
+.theater > .sub_region > li > span{
+	opacity:0.25;
+}
+
+.sub_region > .screening > span{
+	opacity:1 !important;
+}
+
+.sub_region > .selected{
+	padding:1px;
+	line-height:27px !important;
+	background-color:#3e3e3e;
+	border:1px solid black;
+}
+
+.sub_region > .selected > span{
+	width:100%; height:100%;
+	display:inline-block;
+	padding-left:5px !important;
+	border:1px solid #5c5c5c;
+	color:white !important;
+}
+/* ------------------------------------------------------------------------------------------------ */
+
+
+
+/* ------------------------------------- date ------------------------------------- */
+#ticket > .date{
+	width:120px; height:533px;
+	float:left;
+	text-align:center;
+	position:relative;
+	overflow:hidden;
+}
+
+.date > .title{
+	margin-bottom:5px;
+	background-position:50% -58px !important;
+}
+
+.date > .slider{
+	width:240px;
+	position:absolute;
+}
+
+.slider > ul{
+	width:120px; height:495px;
+	display:inline-block;
+	float:left;
+}
+
+.slider > ul .mCSB_scrollTools .mCSB_dragger{
+	height:100px !important;
+}
+
+.slider > ul .mCSB_scrollTools .mCSB_draggerRail{
+	background-color:#f2f0e5;
+}
+
+
+
+/* header */
+.slider > ul .header{
+	position:relative;
+	margin-bottom:20px;
+}
+
+.header > .year{
+	display:inline-block;
+	text-align:center;
+	font-weight:bold; font-size:13px;
+	color:#636363;
+}
+
+.header > .month{
+	display:inline-block;
+	text-align:center;
+	font-weight:bold; font-size:30px;
+	color:#636363;
+}
+
+
+.header > button{
+	width:26px; height:53px;	
+	display:inline-block;
+	position:absolute;
+	padding:0px;
+	border:none;
+	background:url("../../../../../resources/images/public/sprite_btn(cgv).png") no-repeat;
+	font-size:0px;
+	cursor:pointer;
+}
+
+.header > .before_btn{
+	top:0px; left:12px;
+	background-position:0px -96px;
+}
+
+.header > .next_btn{
+	top:0px; right:0px;
+	background-position:-30px -96px;
+	
+}
+
+
+
+/* day */
+.slider > ul #day{
+	width:50px;
+	margin:0px auto 13px auto;
+	opacity:0.3;
+}
+
+#day > a{
+	width:100%;
+	display:inline-block;
+	overflow:hidden;
+}
+
+a > .dayOfWeek{
+	float:left;
+	font-size:14px;
+}
+
+a > .day{
+	font-weight:bold;
+	float:right;
+	font-size:14px;
+}
+
+
+.slider > ul .selection{
+	opacity:1 !important;
+	cursor:pointer;
+}
+
+.slider > ul .selection > a{
+	font-weight:bold;
+}
+
+
+.slider > ul .selected{
+	width:66px !important; height:33px;
+	padding:1px;
+	background-color:#3e3e3e;
+	border:1px solid black;
+}
+
+.slider > ul .selected > a{
+	height:100%;
+	padding:5px 5px 0px 5px;
+	border:1px solid #5c5c5c;
+	color:white !important;
+}
+/* ------------------------------------------------------------------------------- */
+
+
+
+/* ------------------ time ------------------ */
+#ticket > .time{
+	width:140px;
+	float:left;
+}
+
+.time > .title{
+	margin-bottom:10px;
+	background-position:50% -91px !important;
+}
+
+.time > ul{
+	height:490px;
+}
+
+.time > ul li{
+	width:90px;
+	margin:0px auto 10px auto;
+}
+
+.time > ul > .initial{
+	width:100%;
+	margin:0px;
+	padding-top:215px;
+	line-height:18px;
+	text-align:center;
+	font-size:13px;
+	color:#676767;
+}
+
+
+.time > ul .screening_time{
+	width:47px;
+	display:inline-block;
+	line-height:23px;
+	margin-right:10px;
+	vertical-align:middle;
+	text-align:center;
+	border:1px solid #d6d3ce;
+	cursor:pointer;
+}
+
+.time > ul .screening_time > a{
+	width:100%;
+	display:block;
+	font-size:13px; font-weight:bold;
+}
+
+.time > ul .empty_seat{
+	color:#3d7c35;
+	font-size:12px; font-weight:bold;
+}
+
+
+.time > ul .selected{
+	line-height:20px;
+	padding:1px;
+	border-color:black;
+	background-color:#3a3a3a;
+}
+
+.time > ul .selected > a{
+	border:1px solid #5c5c5c;
+	color:white;
+}
+
+
+.time > ul .mCSB_container{
+	margin-right:0px !important;
+}
+
+.time > ul .mCSB_scrollTools .mCSB_dragger{
+	height:100px !important;
+}
+
+.time > ul .mCSB_scrollTools .mCSB_draggerRail{
+	background-color:#f2f0e5;
+}
+/* ----------------------------------------- */
+/* ============================================================================ */
+
+
+
+/* --------------------------------------- ● seat_selection ● --------------------------------------- */
+#seat_selection{
+	width:764px;
+	float:left;
+	border-left:2px solid #d4d3c9;
+	border-right:2px solid #d4d3c9;
+	border-bottom:2px solid #d4d3c9;
+	background-color:#f2f0e4;
+}
+
+
+
+/* title */
+#seat_selection > .title{
+	background-color:#333333;
+}
+
+.title > h3{
+	height:33px;
+	margin:0px;
+	background:url("../../../../../resources/images/public/titles.png") no-repeat 50% -124px;
+}
+
+
+
+/* personnel */
+#seat_selection > .personnel{
+	padding:10px 0px 0px 15px;
+	border-bottom:2px solid #d4d3c9;
+}
+
+.personnel > div{
+	overflow:hidden;
+	padding-bottom:10px;
+}
+
+
+.personnel > div > span{
+	width:50px; height:25px;
+	line-height:22px;
+	float:left;
+	font-size:13px;
+}
+
+.personnel > .adult > span{
+	color:red;
+}
+
+.personnel > .teenager > span{
+	color:blue;
+}
+
+.personnel > .child > span{
+	color:green;
+}
+
+
+.personnel > div > ul{
+	float:left;
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+
+.personnel > div > ul > li{
+	width:25px; height:25px;
+	float:left;
+	border:1px solid #d6d3ce;
+	padding:1px;
+	margin:0px 2px;
+	cursor:pointer;
+}
+
+.personnel > div > ul > li > a{
+	height:100%;
+	display:block;
+	line-height:19px;
+	text-align:center;
+	font-size:14px; font-weight:bold;
+}
+
+.personnel > div > ul > .selected{
+	border:1px solid black;
+	background-color:#353535;
+}
+
+.personnel > div > ul > .selected > a{
+	line-height:17px;
+	border:1px solid #5c5c5c;
+	color:white;
+}
+
+
+.personnel > div > input{
+	float:left;
+    margin-top:6px;
+    margin-left:6px;
+}
+
+
+
+/* seat */
+#seat_selection > #seat{
+	height:310px;
+	position:relative;
+	border-top-right-radius:2px solid red;
+	opacity:0.4;
+}
+
+#seat > .screen{
+	width:650px;
+	background:url("../../../../../resources/images/user/movie/reserve/ticket/screen_bg.png") repeat-x;
+	margin:20px auto 35px auto;
+	text-align:center;
+}
+
+.screen > span{
+	width:57px; height:25px;
+	display:inline-block;
+	background:url("../../../../../resources/images/user/movie/reserve/ticket/screen_text.png") no-repeat;
+}
+
+
+#seat > .line{
+	position:absolute;
+	left:250px;
+}
+
+.line > ul{
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+.line > ul > li{
+	width:21px; height:21px;
+	margin-bottom:1px;
+	line-height:19px;
+	text-align:center;
+	border-top:1px solid #d4d3c9;
+	font-size:11px; font-weight:bold;
+}
+
+
+#seat > .seat{
+	width:220px;
+	margin:0px auto;
+}
+
+.seat > ul{
+	padding:0px;
+	margin:0px 0px 1px 0px;
+	overflow:hidden;
+	list-style:none;
+}
+
+.seat > ul > li{
+	width:21px; height:21px;
+	position:relative;
+	float:left;
+	padding-left:1px;
+	margin-right:1px;
+	line-height:15px;
+	text-align:center;
+	background-color:#636363;
+	font-size:11px; font-weight:bold;
+	color:white;
+	cursor:pointer;
+}
+
+.seat > ul > li.reserved{
+	background-color:#c3c3c3;
+}
+
+.seat > .Economy > li{
+	border:2px solid #ed8c00;
+}
+
+.seat > .Standard > li{
+	border:2px solid #01c73c;
+}
+
+.seat > .Prime > li{
+	border:2px solid #f71708;
+}
+
+.seat > ul > li > a{
+	width:100%; height:100%;
+	display:inline-block;
+	position:absolute;
+	left:0px;
+}
+
+
+#seat > .legend{
+	position:absolute;
+	top:62px; right:55px;
+}
+
+.legend > div{
+	margin-bottom:5px;
+}
+
+.legend > div > .icon{
+	width:19px; height:19px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:4px;
+}
+
+.legend > .Economy > .icon{
+	border:2px solid #ed8c00;
+}
+
+.legend > .Standard > .icon{
+	border:2px solid #01c73c;
+}
+
+.legend > .Prime > .icon{
+	border:2px solid #f71708;
+}
+
+.legend > div > .text{
+	font-size:13px;
+	color:#4c4c4c;
+}
+/* ------------------------------------------------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------- ● tnb_container ● ---------------------------------------------- */
+#tnb_container{
+	background-color:#1d1d1c;
+}
+
+#tnb_container > .center_align_wrap{
+	width:946px;
+	margin:0px auto;
+	padding:10px 0px;
+	overflow:hidden;
+}
+
+.center_align_wrap > div{
+	width:210px; height:110px;
+	float:left;
+	background:url("../../../../../resources/images/user/movie/reserve/ticket/split.png") no-repeat right;
+}
+
+.center_align_wrap > div > .placeholder{
+	height:100%;
+	background:url("../../../../../resources/images/user/movie/reserve/ticket/tnb_steps.png") no-repeat;
+}
+
+.row{
+	height:23px;
+}
+
+.row:first-child{
+	margin-top:13px;
+}
+
+.row > h3{
+	width:45px;
+	display:inline-block;
+	margin:0px;
+	text-align:center;
+	font-size:12px; font-weight:normal;
+	color:#f1f1f1;
+}
+
+.row > span{
+	font-size:12px; font-weight:bold;
+	color:#f1f1f1;
+}
+
+
+
+/* movie */
+.tnb_movie > .placeholder{
+	background-position:50% 40px !important;
+}
+
+.tnb_movie > .poster{
+	width:74px; height:108px;
+	margin-right:10px;
+	vertical-align:top;
+}
+
+.tnb_movie > .title{
+	width:120px;
+	display:inline-block;
+	line-height:16px;
+	margin-top:16px;
+	font-size:12px; font-weight:bold;
+	color:#f1f1f1;
+}
+
+
+
+/* theater */
+.tnb_theater > .placeholder{
+	background-position:50% -68px !important;
+}
+
+
+
+/* seat */
+.tnb_seat > .placeholder{
+	background-position:50% -177px !important;
+}
+
+.tnb_seat > .seat{
+	height:36px;
+	overflow:hidden;
+}
+
+.tnb_seat > .seat > h3{
+	float:left;
+	padding-top:3px; padding-left:1px;
+}
+
+.tnb_seat > .seat > div{
+	width:130px;
+	float:left;
+}
+
+.tnb_seat > .seat > div > span{
+	font-size:12px; font-weight:bold;
+	color:#f1f1f1;
+}
+
+
+
+/* payment */
+.tnb_payment{
+	background:none !important;
+}
+
+.tnb_payment > .placeholder{
+	background-position:50% -285px !important;
+}
+
+.tnb_payment > .row{
+	height:20px;
+}
+
+.tnb_payment > .row > h3{
+	width:59px;
+	padding:0px 10px;
+	font-size:11.5px;
+}
+
+.tnb_payment > .row > span{
+	margin-left:7px;
+	font-size:11.5px;
+}
+
+.tnb_payment > .adult > h3{
+	padding-left:6px;
+}
+
+.tnb_payment .personnel{
+	margin-left:0px !important;
+}
+
+.tnb_payment > .total_price > span{
+	margin-left:6px;
+	color:#cc0000;
+}
+
+
+
+/* seat_select_button */
+.seat_select_button{
+	width:106px; height:108px;
+	float:left;
+	background:url("../../../../../resources/images/user/movie/reserve/ticket/tnb_buttons.png") no-repeat;
+	cursor:pointer;
+}
+
+.seat_select_button.on{
+	background-position:-150px -220px;
+}
+
+.seat_select_button.off{
+	background-position:0px -220px;
+}
+
+
+
+/* backButton */
+.backButton{
+	width:106px; height:108px;
+	float:left;
+	margin-right:40px;
+	background:url("../../../../../resources/images/user/movie/reserve/ticket/tnb_buttons.png") 0px 0px no-repeat;
+	cursor:pointer;
+}
+
+
+
+/* complete_button */
+.complete_button{
+	width:106px; height:108px;
+	float:left;
+	background:url("../../../../../resources/images/user/movie/reserve/ticket/tnb_buttons.png") -150px -330px no-repeat;
+	cursor:pointer;
+}
+/* -------------------------------------------------------------------------------------------------------------- */

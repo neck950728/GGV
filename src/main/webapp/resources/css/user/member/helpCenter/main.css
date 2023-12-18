@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+#container{
+	width:980px;
+	margin:100px auto 0px auto;
+	position:relative;
+}
+
+#container:after{
+	display:block;
+	content:"";
+    clear:both;
+}
+
+/*
+	#container{
+		display:flex;
+		justify-content:center;
+		overflow:hidden; // flex 사용 시 생략 가능 
+	}
+*/
+
+
+
+#contents{
+	float:left;
+	margin:0px 0px 50px 50px;
+}
+
+
+#contents > .header{
+	position:relative;
+}
+
+.header > .search{
+	position:absolute;
+	left:0px;
+	top:-35px;
+}
+
+.search > input{
+	height:27px;
+	padding-left:5px;
+	vertical-align:bottom;
+	border:1px solid #6a6a6a;
+}
+
+.search > button{
+	width:45px; height:27px;
+	line-height:21px;
+	padding:2px;
+	border:none;
+	background-color:#2a2a2a;
+	cursor:pointer;
+	appearance:none; /* default style 제거 */
+}
+
+.search > button > span{
+	display:block;
+	border:1px solid #5b5b58;
+	font-size:12px; font-weight:bold;
+	color:white;
+}
+
+.header > .write_button{
+	position:absolute;
+	right:0px;
+	top:-35px;
+}
+
+.write_button > a{
+	padding:7px 16px;
+	border:1px solid #cacac1;
+	text-decoration:none;
+	font-size:12px; font-weight:bold;
+	color:black;
+	cursor:pointer;
+}
+
+
+#contents > .board{
+	width:700px;
+	border-collapse:collapse;
+	text-align:center;
+}
+
+.board tr{
+	height:34px;
+}
+
+.board th{
+	border:1px solid #d4d3c9;
+	background-color:#e71a0f;
+	font-weight:normal;
+	color:white;
+}
+
+.board td{
+	border:1px solid #d4d3c9;
+}
+
+.board td > a{
+	color:black;
+	text-decoration:none;
+}
+
+
+#contents > .page_nav{
+	text-align:center;
+	margin-top:20px;
+}
+
+.page_nav > a{
+	padding-right:8px;
+	vertical-align:middle;
+	font-size:15px; font-weight:bold;
+	color:black;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.page_nav > .head, .page_nav > .tail{
+	width:27px; height:28px;
+	display:inline-block;
+    border:1px solid #cacac1;
+    background:#faf9ed url("../../../../../resources/images/public/paging_button.gif") no-repeat;
+    font-size:0px;
+}
+
+.page_nav > .head{
+	background-position:4px -104px;
+}
+
+.page_nav > .tail{
+	background-position:5px -156px;
+}
+
+.page_nav > .back, .page_nav > .next{
+	height:28px;
+	display:inline-block;
+    line-height:25px;
+	border:1px solid #cacac1;
+    background:#faf9ed url("../../../../../resources/images/public/paging_button.gif") no-repeat;
+    font-size:12px;
+}
+
+.page_nav > .back{
+	margin-right:8px;
+	padding:0px 10px 0px 24px;
+	background-position:0px 0px;
+}
+
+.page_nav > .next{
+	padding:0px 24px 0px 10px;
+	background-position:right -52px;
+}
+
+.page_nav > .curPage{
+	color:#993333;
+	text-decoration:underline;
+}

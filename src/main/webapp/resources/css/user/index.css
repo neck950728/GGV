@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+#container{
+	background:url("../../../resources/images/public/brick_bg.png") repeat-x;
+	background-position-y:83px; /* 83px : text_banner 높이 */
+}
+
+#center_align_wrap{ width:970px; margin:0px auto; }
+
+
+/* text_banner */
+#text_banner{ text-align:center; background-color:#fffbef; }
+
+
+/* main_banner */
+.swiper-container:before, .swiper-container:after{
+	width:14px; height:450px;
+	position:absolute;
+	top:0px;
+	content:"";
+	z-index:2;
+}
+
+.swiper-container:before{
+	left:0px;
+	background:url("../../../resources/images/public/bricks_before_bg.png") no-repeat 0px 0px;
+}
+
+.swiper-container:after{
+	right:0px;
+	background:url("../../../resources/images/public/bricks_after_bg.png") no-repeat 0px 0px;
+}
+
+
+/* movie_selection */
+#movie_selection{ margin-top:40px; }
+
+#movie_selection > .title{
+	width:100%;
+	margin:0px auto 15px auto;
+	text-align:center;
+	background:url("../../../resources/images/user/index/movie_selection_bg.jpg") repeat-x 0px 50%;
+}
+
+#movie_selection > .title > img{
+	background-color:#fdfcf0;
+	padding:0px 15px;
+}
+
+.recommend_movie{ width:100%; height:388px; margin:auto; overflow:hidden; }
+.recommend_movie > .left{ width:74.3%; height:100%; float:left; margin-right:6.8px; }
+.recommend_movie > .left > video{ background-color:black; }
+.recommend_movie > .right{ width:25%; height:100%; float:left; }
+.recommend_movie > .right > img{ width:100%; height:100%;}
+
+.recommend_movie > .right{
+	background-color:black;
+	background-image:url("../../../resources/images/public/loading.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	background-size:35px 35px;
+}
+
+
+/* popup */
+#popup_bg{
+	width:100%; height:100%;
+    position:fixed;
+    left:0px; top:0px;
+    background-color:rgba(0, 0, 0, 0.5);
+    z-index:3;
+}
+
+#popup{
+	width:470px;
+	position:fixed;
+	left:50%; top:50%;
+	transform:translate(-50%, -50%);
+	padding:15px;
+	background-color:#292929;
+    border:7px solid #212121;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+    z-index:3;
+}
+
+#popup > #center{
+	margin-bottom:45px;
+}
+
+#popup > #center > img{
+	margin-bottom:15px;
+}
+
+#popup > #bottom{
+	text-align:right;
+}

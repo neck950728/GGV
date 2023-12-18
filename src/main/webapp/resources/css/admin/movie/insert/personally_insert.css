@@ -1,0 +1,609 @@
+@charset "UTF-8";
+
+#container{
+	padding:70px 0px;
+	background:url("../../../../../resources/images/admin/movie/brick_bg.jpg") repeat;
+}
+
+#center_align_wrap{ width:723px; margin:0px auto; }
+
+
+
+/* ● header ● */
+.register_wrap > .header > h1{
+	width:660px; height:40px;
+	line-height:40px;
+	text-align:center;
+	border-radius:3px;
+	background:linear-gradient(to right, #ffeaea, #feffb4);
+	font-family:GGV_Font02; font-weight:normal; font-size:21px;
+}
+
+
+
+/* --------------------------------------------------- ● body ● --------------------------------------------------- */
+.register_wrap > .body > .form_contents{
+	margin-bottom:10px;
+}
+
+.register_wrap > .body .label{
+	width:110px; height:33px;
+	display:inline-block;
+	line-height:30px;
+	vertical-align:top;
+	text-align:center;
+    font-size:14px; font-weight:bold;
+    border:1px solid #a5a5a5; border-radius:3px;
+    background-color:#e8e8e8;
+}
+
+.register_wrap > .body input[type='text']{
+	width:544px; height:33px;
+	padding-left:5px;
+	border:1px solid #a5a5a5;
+	border-radius:3px;
+	background-color:#f5f5f5;
+	font-size:15px;
+}
+
+.register_wrap > .body input[type='file']{ display:none; }
+
+.register_wrap > .body select{
+	height:33px;
+	border:1px solid #a5a5a5;
+	border-radius:3px;
+	background-color:#f5f5f5;
+	font-size:15px;
+}
+
+.register_wrap > .body .img{
+	padding-right:6px;
+	background:url("../../../../../resources/images/admin/movie/insert/personally_insert/img_icon.png") no-repeat right;
+	background-size:22px;
+	background-origin:content-box; /* 배경 이미지가 padding의 영향을 받게 해줌 */
+	color:gray;
+}
+
+.register_wrap > .body .video{
+	padding-right:4px;
+	background:url("../../../../../resources/images/admin/movie/insert/personally_insert/video_icon.png") no-repeat right;
+	background-size:26px;
+	background-origin:content-box;
+	color:gray;
+}
+
+
+/* multiple */
+.register_wrap > .body > .multiple{
+	width:100%;
+	margin-bottom:80px;
+}
+
+.multiple > .label{ width:660px !important; margin-bottom:6px; }
+
+.multiple input, .multiple select{ margin-right:6px; }
+
+.multiple .plus_btn, .multiple .minus_btn{
+	width:25px; height:25px;
+	display:inline-block;
+	margin-left:5px; margin-top:3px;
+	cursor:pointer;
+}
+
+.multiple > div > ul{
+	height:33px;
+	margin:0px 0px 5px 0px; padding:0px;
+	/* overflow:hidden; */
+	list-style:none;
+}
+
+.multiple > div > ul > li{ float:left; }
+
+
+/* upload_btn */
+.register_wrap > .body .upload_btn{
+	width:82px; height:33px;
+	display:inline-block;
+	margin:0px; padding:0px;
+	line-height:33px;
+	vertical-align:top;
+	text-align:center;
+	list-style:none;
+    border-radius:3px;
+    background-color:#3a3a3a;
+    font-size:13px;
+    color:white;
+    cursor:pointer;
+}
+
+.register_wrap > .body .video_upload_btn{ width:95px; }
+
+.upload_btn > li > span{ display:block; }
+
+.upload_btn > li > .sub_menu{
+	position:relative; z-index:1; /* position 값이 static인 경우에는 z-index가 적용되지 않는다. */
+	margin:0px; padding:0px;
+	list-style:none;
+	border-bottom-left-radius:3px; border-bottom-right-radius:3px;
+	background-color:#484848;
+}
+
+.sub_menu > .url_register{ border-bottom:1px solid #424242; }
+
+
+/* stillCut */
+.stillCut .img{ width:572px !important; }
+.existing > .stillCut > input{ width:660px !important; margin-right:0px; }
+
+
+/* trailer */
+.trailer_title > input{ width:147px !important; }
+.trailer .video, .trailer .img{ width:160px !important; margin-right:2px; }
+
+
+/* director */
+.director .director_ko_name > input, .director .director_en_name > input{ width:110px !important; }
+.director .img{ width:340px !important; }
+
+
+/* actor */
+.actor .actor_ko_name > input, .actor .actor_en_name > input{ width:110px !important; }
+.actor .img{ width:264px !important; }
+
+
+/* story */
+.register_wrap > .body > .story{ height:290px; }
+
+.story > .label{
+	height:100% !important;
+	line-height:290px !important; 
+}
+
+.story > textarea{
+	width:544px; height:100%;
+	resize:none;
+	border-radius:3px;
+	font-size:15px;
+}
+/* --------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* ● footer ● */
+.footer{
+	overflow:hidden;
+	margin-right:63px;
+}
+
+.footer > .register_btn{ float:right; }
+
+.register_btn > button{
+	width:100px; height:33px;
+	line-height:33px;
+	background:linear-gradient(to right, #ffeaea, #feffb4);
+	border:1px solid #c9ca88; border-radius:3px;
+	font-family:"GGV_Font01"; font-size:13px;
+}
+
+
+
+/* ● url_input_dialog ● */
+.url_input_dialog_bg{
+	width:100%; height:100%;
+	left:0px; top:0px;
+	position:fixed; z-index:2;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+.url_input_dialog{
+	width:300px; height:132px;
+	
+	/* 중앙 배치 */
+	left:50%; top:50%;
+	margin-left:-150px; /* 300 / 2 */
+	margin-top:-66px; /* 132 / 2 */
+	
+	padding:20px 20px 0px 20px;
+	position:fixed; z-index:3;
+	background-color:#292929;
+	border:7px solid #212121; border-radius:15px;
+}
+
+.url_input_dialog > .close_btn{
+	width:18px; height:18px;
+	position:absolute;
+	top:4px; right:4px;
+	border:none;
+	background:url("../../../../../resources/images/public/sprite_btn(cgv).png") no-repeat -72px -62px;
+	cursor:pointer;
+}
+
+.url_input_dialog > div{ position:relative; }
+
+.url_input_dialog > div > span{
+	font-family:"GGV_Font02"; font-size:17px;
+	color:#efead5;
+}
+
+.url_input_dialog > div > input{
+	width:100%; height:33px;
+	display:inline-block;
+	margin-top:1px; margin-bottom:7px;
+	border:1px solid #a5a5a5; border-radius:3px;
+	background-color:#fffef7;
+	font-size:14px;
+}
+
+.url_input_dialog > div > .register_btn{
+	width:45px; height:30px;
+	position:absolute;
+	right:0px;
+	border:1px solid #c5c2a8; border-radius:3px;
+    background-color:#fbf7da;
+    font-family:"GGV_Font02"; font-size:14px;
+    color:#2d2d2d;
+}
+
+
+
+/* ======================================== ● screening_info ● ======================================== */
+.screening_info_bg{
+	width:100%; height:100%;
+	left:0px; top:0px;
+	position:fixed;
+	background-color:rgba(0, 0, 0, 0.3);
+}
+
+.screening_info{
+	position:fixed;
+	left:50%; top:50%;
+	margin-left:-300px; margin-top:-337px;
+	overflow:hidden;
+	background-color:#f2f0e5;
+	border:2px solid gray; border-radius:15px;
+}
+
+.screening_info > .title{
+	text-align:center;
+	font-size:20px;
+}
+
+.screening_info > .close_btn{
+	width:18px; height:18px;
+	position:absolute;
+	top:17px; right:13px;
+	border:none;
+	background:url("../../../../../resources/images/admin/movie/insert/personally_insert/close_btn.png") no-repeat;
+	background-size:18px 18px;
+	font-size:0px;
+	cursor:pointer;
+}
+
+.screening_info > div > .title{
+	height:33px;
+	background:#333333 url("../../../../../resources/images/public/titles.png") no-repeat;
+	font-size:0px;
+}
+
+.screening_info > div ul{
+	margin:0px; padding:0px;
+	list-style:none;
+}
+
+.screening_info > .add_btn{
+	width:60px; height:40px;
+	position:absolute;
+	right:20px; bottom:115px;
+	background:#3e3e3e;
+	border:none; border-radius:5px;
+	font-size:13px;
+	color:#f2f0e5;
+	cursor:pointer;
+}
+
+
+
+/* -------------------------------------------- theater -------------------------------------------- */
+.screening_info > .theater{
+	float:left;
+}
+
+.theater > .title{
+	background-position:50% -25px !important;
+}
+
+.theater > ul{
+	width:110px;
+	float:left;
+}
+
+.theater > ul > li{
+	height:33px;
+	line-height:32px;
+	margin-bottom:2px;
+	font-size:13px;
+	cursor:pointer;
+}
+
+.theater > ul > li > span{
+	padding-left:7px;
+	font-weight:bold;
+}
+
+
+.theater > .main_region > li{
+	padding-right:10px;
+	text-align:right;
+	background-color:#e6e4d9;
+}
+
+.theater > .main_region > .selected{
+	background:#e6e4d9 url("../../../../../resources/images/public/arrow_icon.png") no-repeat 97% center;
+}
+
+.theater > .main_region > .on{
+	background-color:#b5b3ab;
+}
+
+
+.theater > .sub_region > .selected{
+	padding:1px;
+	line-height:27px !important;
+	background-color:#3e3e3e;
+	border:1px solid black;
+}
+
+.theater > .sub_region > .selected > span{
+	width:100%; height:100%;
+	display:inline-block;
+	padding-left:5px !important;
+	border:1px solid #5c5c5c;
+	color:white !important;
+}
+/* ------------------------------------------------------------------------------------------------ */
+
+
+
+/* ------------------------------------- date ------------------------------------- */
+.screening_info > .date{
+	width:120px; height:523px;
+	float:left;
+	text-align:center;
+	position:relative;
+	overflow:hidden;
+	border-left:2px solid #d2d2d2;
+	border-right:2px solid #d2d2d2;
+}
+
+.date > .title{
+	margin-bottom:5px;
+	background-position:50% -58px !important;
+}
+
+.date > .slider{
+	width:240px;
+	position:absolute;
+}
+
+.slider > ul{
+	width:120px; height:485px;
+	display:inline-block;
+	float:left;
+}
+
+.slider > ul .mCS-dark-3.mCSB_scrollTools .mCSB_draggerRail{
+	background-color:#f2f0e5;
+}
+
+.slider > ul .mCSB_scrollTools .mCSB_dragger{
+	height:100px !important;
+}
+
+
+
+/* header */
+.slider > ul .header{
+	position:relative;
+	margin-bottom:20px;
+}
+
+.header > .year{
+	display:inline-block;
+	text-align:center;
+	font-weight:bold; font-size:13px;
+	color:#636363;
+}
+
+.header > .month{
+	display:inline-block;
+	text-align:center;
+	font-weight:bold; font-size:30px;
+	color:#636363;
+}
+
+
+.header > button{
+	width:26px; height:53px;	
+	display:inline-block;
+	position:absolute;
+	padding:0px;
+	border:none;
+	background:url("../../../../../resources/images/public/sprite_btn(cgv).png") no-repeat;
+	font-size:0px;
+	cursor:pointer;
+}
+
+.header > .before_btn{
+	top:0px; left:12px;
+	background-position:0px -96px;
+}
+
+.header > .next_btn{
+	top:0px; right:0px;
+	background-position:-30px -96px;
+	
+}
+
+
+
+/* day */
+.slider > ul #day{
+	width:50px;
+	margin:0px auto 13px auto;
+	opacity:0.3;
+}
+
+#day > a{
+	width:100%;
+	display:inline-block;
+	overflow:hidden;
+}
+
+a > .dayOfWeek{
+	float:left;
+	font-size:14px;
+}
+
+a > .day{
+	font-weight:bold;
+	float:right;
+	font-size:14px;
+}
+
+
+.slider > ul .selection{
+	opacity:1 !important;
+	cursor:pointer;
+}
+
+
+.slider > ul .selected{
+	width:66px !important; height:33px;
+	padding:1px;
+	background-color:#3e3e3e;
+	border:1px solid black;
+}
+
+.slider > ul .selected > a{
+	height:100%;
+	padding:5px 5px 0px 5px;
+	border:1px solid #5c5c5c;
+	color:white !important;
+}
+/* ------------------------------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------------- time ---------------------------------------------------------- */
+.screening_info > .time{
+	float:left;
+}
+
+.time > .title{
+	background-position:50% -91px !important;
+}
+
+
+.time > .timePicker{
+	margin-top:10px;
+	padding:0px 10px;
+	overflow:hidden;
+}
+
+.timePicker > div{
+	width:60px;
+	float:left;
+	margin:0px 10px;
+}
+
+.timePicker > div > *{
+	display:block;
+}
+
+.timePicker > div > input{
+	width:100%; height:40px;
+	text-align:center;
+}
+
+.timePicker > div > button{
+	width:100%; height:40px;
+	border:none;
+	padding:0px;
+	border:1px solid #ada8a8; border-radius:5px;
+}
+
+.timePicker > div > .up_button{
+	margin-bottom:5px;
+	background:url("../../../../../resources/images/admin/movie/insert/personally_insert/up_arrow_icon.png") no-repeat 50% 50%;
+}
+
+.timePicker > div > .down_button{
+	margin-top:5px;
+	background:url("../../../../../resources/images/admin/movie/insert/personally_insert/down_arrow_icon.png") no-repeat 50% 50%;
+}
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* ------------------------------------------------ selected_list ------------------------------------------------ */
+.screening_info > .selected_list{
+	position:relative;
+	clear:both;
+	background-color:#31312f;
+}
+
+.selected_list > ul{
+	height:90px;
+	padding:7px 0px 0px 25px !important;
+	list-style:inside !important;
+	color:white;
+}
+
+.selected_list > ul li{
+	margin-bottom:4px;
+	font-size:14px;
+}
+
+.selected_list > ul li.existing{
+	background-image:linear-gradient(to right, #f33d3d , #31312f);
+}
+
+
+.selected_list > ul li > .date{
+	color:gold;
+}
+
+.selected_list > ul li > .time{
+	color:darkorange;
+}
+
+.selected_list > ul li > .delete_btn{
+	width:20px; height:23px;
+	padding:0px;
+	vertical-align:middle;
+	background:url("../../../../../resources/images/public/sprite_btn(cgv).png") no-repeat -25px -312px;
+	border:none;
+	cursor:pointer;
+}
+
+
+.selected_list > button{
+	width:80px; height:79px;
+	position:absolute;
+	bottom:5px;
+	border:none;
+    font-size:0px;
+    cursor:pointer;
+}
+
+.selected_list > .jump_btn{
+	background:url("../../../../../resources/images/admin/movie/insert/personally_insert/jump_btn.png") no-repeat;
+	right:110px;
+}
+
+.selected_list > .complete_btn{
+	right:25px;
+	background:url("../../../../../resources/images/admin/movie/insert/personally_insert/complete_btn.png") no-repeat;
+}
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ============================================================================================== */

@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+#container{
+	width:1210px;
+	margin:60px auto 0px auto;
+	overflow:hidden;
+}
+
+
+
+/* ● banner ● */
+.banner{
+	float:left;
+}
+
+.banner.left{
+	margin-right:70px;
+}
+
+.banner.right{
+	margin-left:70px;
+}
+
+
+
+/* ========================= ● reserve_result ● ========================= */
+#reserve_result{
+	width:750px;
+	float:left;
+	border-left:2px solid #d4d3c9;
+	border-right:2px solid #d4d3c9;
+	border-bottom:2px solid #d4d3c9;
+	background-color:#f2f0e5;
+}
+
+
+
+/* --------------------------------------- title --------------------------------------- */
+#title{
+	height:33px;
+	background:url("../../../../../resources/images/public/titles.png") no-repeat 50% -157px;
+	background-color:#333333;
+}
+/* ----------------------------------------------------------------------------------- */
+
+
+
+/* ----------------- reserve_info ----------------- */
+#reserve_info{
+	height:400px;
+	display:flex;
+	align-items:center; /* 수직(세로) 가운데 정렬 */
+	justify-content:center; /* 수평(가로) 가운데 정렬 */
+	overflow:hidden;
+}
+
+
+/* poster */
+#reserve_info > .poster{
+	width:185px; height:260px;
+	float:left;
+	margin-right:30px;
+}
+
+
+/* ul */
+#reserve_info > ul{
+	float:left;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+ul > li{
+	margin-bottom:14px;
+	font-size:14px;
+}
+
+ul > li > p{
+	display:inline-block;
+	margin:0px;
+}
+
+ul > li > span.emphasis{
+	color:#c62424;
+}
+
+ul > li > span:not(.emphasis){
+	font-weight:bold;
+}
+/* ----------------------------------------------- */
+/* ================================================================ */

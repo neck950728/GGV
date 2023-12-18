@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.adminMovieMapper">
+	
+	<select id="movieCodeDuplicateCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM movie WHERE code = #{code}
+	</select>
+	
+	<select id="identificationCodeDuplicateCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM screening_info WHERE identification_code = #{code}
+	</select>
+	
+	<insert id="insertMovie" parameterType="MovieDTO">
+		INSERT INTO movie VALUES(#{code}, #{title}, #{genre}, #{nation}, #{showtimes}, #{premier}, #{grade}, #{poster}, #{story},
+											  #{reserveRate}, #{score}, #{like_})
+	</insert>
+	
+	<insert id="insertStillCutList" parameterType="java.util.Map">
+		INSERT INTO stillCut VALUES
+		<foreach collection="stillCutList" item="stillCut" index="index" separator=",">
+			(#{stillCut.code}, #{stillCut.stillCut})
+		</foreach>
+	</insert>
+	
+	<insert id="insertTrailerList" parameterType="java.util.Map">
+		INSERT INTO trailer VALUES
+		<foreach collection="trailerList" item="trailer" index="index" separator=",">
+			(#{trailer.code}, #{trailer.title}, #{trailer.video}, #{trailer.img})
+		</foreach>
+	</insert>
+	
+	<insert id="insertDirectorList" parameterType="java.util.Map">
+		INSERT INTO director VALUES  
+		<foreach collection="directorList" item="director" index="index" separator=",">
+			(#{director.code}, #{director.ko_name}, #{director.en_name}, #{director.img})
+		</foreach>
+	</insert>
+	
+	<insert id="insertActorList" parameterType="java.util.Map">
+		INSERT INTO actor VALUES
+		<foreach collection="actorList" item="actor" index="index" separator=",">
+			(#{actor.code}, #{actor.ko_name}, #{actor.en_name}, #{actor.role_}, #{actor.img})
+		</foreach>
+	</insert>
+	
+	<insert id="insertScreeningInfoList" parameterType="java.util.Map">
+		INSERT INTO screening_info VALUES 
+		<foreach collection="screeningInfoList" item="screeningInfo" index="index" separator=",">
+			(
+				#{screeningInfo.identification_code}, #{screeningInfo.movie_code},
+				#{screeningInfo.main_region}, #{screeningInfo.sub_region},
+				#{screeningInfo.screening_date}, #{screeningInfo.screening_time},
+				#{screeningInfo.reserved_seat}, #{screeningInfo.remaining_seat_count}
+			)
+		</foreach>
+	</insert>
+	
+	
+	<select id="selectTotalMovieCount" resultType="int">
+		SELECT COUNT(*) FROM movie
+	</select>
+	
+	<select id="selectCurPageMovieList" parameterType="java.util.Map" resultType="MovieDTO">
+		<![CDATA[
+			SELECT * FROM
+			(
+				SELECT
+					@rownum := @rownum + 1 AS ROWNUM,
+					a.*
+				FROM
+					movie a,
+					(SELECT @rownum := 0) b
+			) c
+			WHERE c.ROWNUM >= #{startNum} AND c.ROWNUM <= #{endNum}
+		]]>
+	</select>
+	
+	<select id="selectSearchedMovieList" parameterType="String" resultType="MovieDTO">
+		SELECT * FROM movie WHERE title LIKE CONCAT('%', #{keyword}, '%')
+	</select>
+	
+	
+	<delete id="deleteMovie" parameterType="String">
+		DELETE FROM movie WHERE code = #{code}
+	</delete>
+	
+	<delete id="deleteStillCut" parameterType="String">
+		DELETE FROM stillCut WHERE code = #{code}
+	</delete>
+	
+	<delete id="deleteTrailer" parameterType="String">
+		DELETE FROM trailer WHERE code = #{code}
+	</delete>
+	
+	<delete id="deleteDirector" parameterType="String">
+		DELETE FROM director WHERE code = #{code}
+	</delete>
+	
+	<delete id="deleteActor" parameterType="String">
+		DELETE FROM actor WHERE code = #{code}
+	</delete>
+	
+	<delete id="deleteScreeningInfo" parameterType="String">
+		DELETE FROM screening_info WHERE movie_code = #{code}
+	</delete>
+	
+	<delete id="deleteComment" parameterType="String">
+		DELETE FROM comment_ WHERE movie_code = #{code}
+	</delete>
+	
+	<delete id="deleteCommentVote" parameterType="String">
+		DELETE FROM comment_vote WHERE movie_code = #{code}
+	</delete>
+	
+	<delete id="deleteReserve" parameterType="String">
+		DELETE FROM reserve WHERE movie_code = #{code}
+	</delete>
+	
+	<delete id="deleteWishList" parameterType="WishListDTO">
+		DELETE FROM wishList WHERE movie_code = #{code}
+	</delete>
+	
+	
+	<select id="selectReserveList" parameterType="String" resultType="ReserveDTO">
+		SELECT * FROM reserve WHERE movie_code = #{code}
+	</select>
+	
+	<delete id="deleteReserveForUpdateMovie" parameterType="String">
+		DELETE FROM reserve WHERE screeningInfo_identification = #{screeningInfo_identification}
+	</delete>
+	
+	<select id="selectScreeningInfoList" parameterType="String" resultType="ScreeningInfoDTO">
+		SELECT * FROM screening_info WHERE movie_code = #{code}
+	</select>
+	
+	<update id="updateMovie" parameterType="MovieDTO">
+		UPDATE movie SET
+		title = #{title}, genre = #{genre}, nation = #{nation}, showtimes = #{showtimes}, premier = #{premier}, grade = #{grade}, poster = #{poster}, story = #{story}
+		WHERE code = #{code}
+	</update>
+</mapper>

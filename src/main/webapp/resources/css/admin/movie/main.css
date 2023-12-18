@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+#container{
+	background:url("../../../../resources/images/admin/movie/brick_bg.jpg") repeat;
+}
+
+.vertical_align_wrap{ width:100%; height:100%; display:table; }
+
+.buttons{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+
+.buttons > button{
+	width:150px; height:70px;
+	font-family:"GGV_Font02"; font-size:16px;
+	border-radius:10px;
+	cursor:pointer;
+}
+
+.buttons > button:focus{ outline:none; }
+.buttons > .insert_btn{ background:linear-gradient(to right, #ff7877, red); }
+.buttons > .update_btn{ background:linear-gradient(to right, #8d90ff, blue); }

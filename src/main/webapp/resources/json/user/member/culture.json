@@ -1,0 +1,247 @@
+{
+	"product_list":
+	[
+		{
+			"type_en":"combo",
+			"type_ko":"콤보",
+			"title":"맛있으면 0칼로리, 아는 맛이 제일 맛있어요!",
+			"item":
+			[
+				{
+		        	"img":"/resources/images/user/member/culture/product/combo/cgv_combo.png",
+		        	"name_en":"cgv_combo",
+					"name_ko":"CGV 콤보",
+					"composition":"팝콘(L)1 + 탄산 음료(M)2",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"CGV의 영원한 베스트셀러!",
+					"price":"9,000원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/combo/double_combo.png",
+					"name_en":"double_combo",
+					"name_ko":"더블 콤보",
+					"composition":"팝콘(M)2 + 탄산 음료(M)2",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"취향별로 원하는 맛을 선택하세요!",
+					"price":"12,000원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/combo/small_combo.png",
+					"name_en":"small_combo",
+					"name_ko":"스몰 콤보",
+					"composition":"팝콘(M)1 + 탄산 음료(M)1",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"혼영할 때 필수품!",
+					"price":"6,500원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/combo/large_combo.png",
+					"name_en":"large_combo",
+					"name_ko":"라지 콤보",
+					"composition":"팝콘(L)2 + 탄산 음료(L)2",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"가성비 최고 콤보!",
+					"price":"6,500원"
+				}
+			]
+		},
+		{
+			"type_en":"popcorn",
+			"type_ko":"팝콘",
+			"title":"고소, 달콤부터 고메 팝콘까지, 안 먹으면 서운해요~",
+			"item":
+			[
+				{
+		        	"img":"/resources/images/user/member/culture/product/popcorn/nutty_popcorn(L).png",
+		        	"name_en":"nutty_popcorn(L)",
+					"name_ko":"고소 팝콘(L)",
+					"composition":"고소 팝콘(L)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"클래식 팝콘 No.1",
+					"price":"5,000원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/popcorn/sweet_popcorn(L).png",
+					"name_en":"sweet_popcorn(L)",
+					"name_ko":"달콤 팝콘(L)",
+					"composition":"달콤 팝콘(L)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"달콤한 카라멜 향이 가득한 달콤 팝콘!",
+					"price":"6,000원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/popcorn/doubleCheese_popcorn(L).png",
+					"name_en":"doubleCheese_popcorn(L)",
+					"name_ko":"더블 치즈 팝콘(L)",
+					"composition":"더블 치즈 팝콘(L)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"치즈 마니아들 주목!",
+					"price":"6,000원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/popcorn/basilOnion_popcorn(L).png",
+					"name_en":"basilOnion_popcorn(L)",
+					"name_ko":"바질 어니언 팝콘(L)",
+					"composition":"바질 어니언 팝콘(L)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"수많은 마니아를 보유한 바로 그 팝콘!",
+					"price":"6,000원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/popcorn/basilOnion_popcorn(M).png",
+					"name_en":"basilOnion_popcorn(M)",
+					"name_ko":"바질 어니언 팝콘(M)",
+					"composition":"바질 어니언 팝콘(M)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"수많은 마니아를 보유한 바로 그 팝콘!",
+					"price":"5,500원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/popcorn/doubleCheese_popcorn(M).png",
+					"name_en":"doubleCheese_popcorn(M)",
+					"name_ko":"더블 치즈 팝콘(M)",
+					"composition":"더블 치즈 팝콘(M)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"치즈 마니아들 주목!",
+					"price":"5,500원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/popcorn/nutty_popcorn(M).png",
+					"name_en":"nutty_popcorn(M)",
+					"name_ko":"고소 팝콘(M)",
+					"composition":"고소 팝콘(M)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"클래식 팝콘 No.1",
+					"price":"4,500원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/popcorn/sweet_popcorn(M).png",
+					"name_en":"sweet_popcorn(M)",
+					"name_ko":"달콤 팝콘(M)",
+					"composition":"달콤 팝콘(M)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"옥수수 : 미국산",
+					"description":"달콤한 카라멜 향이 가득한 달콤 팝콘!",
+					"price":"5,500원"
+				}
+			]
+		},
+		{
+			"type_en":"drink",
+			"type_ko":"음료",
+			"title":"탄산음료부터 에이드까지, 마시는 즐거움!",
+			"item":
+			[
+				{
+		        	"img":"/resources/images/user/member/culture/product/drink/soft_drink(M).png",
+		        	"name_en":"soft_drink(M)",
+					"name_ko":"탄산음료(M)",
+					"composition":"탄산음료(M)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"",
+					"description":"시원한 탄산음료!",
+					"price":"2,500원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/drink/americano(HOT).png",
+					"name_en":"americano(HOT)",
+					"name_ko":"아메리카노(HOT)",
+					"composition":"아메리카노(HOT)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"",
+					"description":"현대인의 필수품!",
+					"price":"3,500원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/drink/americano(ICE).png",
+					"name_en":"americano(ICE)",
+					"name_ko":"아메리카노(ICE)",
+					"composition":"아메리카노(ICE)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"",
+					"description":"시원한 아메리카노 한 잔!",
+					"price":"4,000원"
+				},
+				{
+					"img":"/resources/images/user/member/culture/product/drink/soft_drink(L).png",
+					"name_en":"soft_drink(L)",
+					"name_ko":"탄산음료(L)",
+					"composition":"탄산음료(L)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"",
+					"description":"시원한 탄산음료!",
+					"price":"3,000원"
+				}
+			]
+		},
+		{
+			"type_en":"snack",
+			"type_ko":"스낵",
+			"title":"출출할 땐 다양한 스낵이 정답이죠~",
+			"item":
+			[
+				{
+		        	"img":"/resources/images/user/member/culture/product/snack//chiliCheeseNacho.png",
+		        	"name_en":"chiliCheeseNacho",
+					"name_ko":"칠리 치즈 나쵸",
+					"composition":"칠리 치즈 나쵸",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"나쵸 : 미국산",
+					"description":"바삭바삭 나쵸!",
+					"price":"4,500원"
+				},
+				{
+		        	"img":"/resources/images/user/member/culture/product/snack//normalCorndog.png",
+		        	"name_en":"normalCorndog",
+					"name_ko":"플레인 핫도그",
+					"composition":"플레인 핫도그",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"돼지고기 : 국내산",
+					"description":"출출할 땐 역시 플레인 핫도그!",
+					"price":"4,000원"
+				},
+				{
+		        	"img":"/resources/images/user/member/culture/product/snack//chiliCheeseCorndog.png",
+		        	"name_en":"chiliCheeseCorndog",
+					"name_ko":"칠리 치즈 핫도그",
+					"composition":"칠리 치즈 핫도그",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"돼지고기 : 국내산",
+					"description":"맛있는 매콤함~",
+					"price":"4,500원"
+				},
+				{
+		        	"img":"/resources/images/user/member/culture/product/snack//tasteChestnut.png",
+		        	"name_en":"tasteChestnut",
+					"name_ko":"맛밤",
+					"composition":"맛밤",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"",
+					"description":"맛도 있고 건강에도 좋은 맛밤!",
+					"price":"3,500원"
+				},
+				{
+		        	"img":"/resources/images/user/member/culture/product/snack//squid.png",
+		        	"name_en":"squid",
+					"name_ko":"오징어(완제품)",
+					"composition":"오징어(완제품)",
+					"expiry":"구매일로부터 6개월 이내",
+					"origin":"",
+					"description":"씹는 즐거움~",
+					"price":"3,500원"
+				}
+			]
+		}
+	]
+}

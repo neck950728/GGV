@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+#container{
+	width:980px;
+	margin:40px auto 0px auto;
+}
+
+.hidden{
+	display:none;
+}
+
+em{
+	margin:0px 5px;
+	font-style:normal; font-size:14px;
+	color:#9e9e9e;
+}
+
+
+
+/* ● title ● */
+#title{
+	height:60px;
+	font-size:37px;
+	border-bottom:3px solid #241d1e;
+}
+
+
+
+/* ● movie_info ● */
+#movie_info{
+	overflow:hidden;
+}
+
+#movie_info > .poster{
+	width:185px; height:260px;
+	float:left;
+	margin-right:30px;
+}
+
+
+#movie_info > .boxing{
+	width:765px;
+	float:left;
+}
+
+.boxing > .title{
+	margin-bottom:15px;
+}
+
+.title > strong{
+	font-family:"GGV_Font01"; font-size:25px;
+	vertical-align:middle;
+}
+
+.title > span{
+	height:29px;
+	display:inline-block;
+	line-height:25px;
+	margin-left:5px; padding:0px 5px;
+	border:2px solid #3e82a4;
+	font-size:14px; font-weight:bold;
+	color:#3e82a4;
+}
+
+
+.boxing > .popularity{
+	padding-bottom:7px;
+	border-bottom:1px solid #d9d6c8;
+}
+
+.popularity .reserveRate{
+	display:inline-block;
+}
+
+.reserveRate > .label{
+    color:#6d6d6d;
+    font-size:15px;
+    font-family:"GGV_Font01";
+}
+
+.reserveRate > .rate{
+	font-size:14px;
+}
+
+
+.popularity .like{
+	display:inline-block;
+}
+
+.like > button{
+	width:23px; height:23px;
+	vertical-align:middle;
+	padding:0px;
+	background:url("../../../../../../resources/images/public/sprite_icon(cgv).png") -60px -66px no-repeat;
+	border:none;
+	font-size:0px;
+	cursor:pointer;
+}
+
+.like > .on{
+	background:url("../../../../../../resources/images/public/sprite_icon(cgv).png") -83px -66px no-repeat;
+}
+
+.like > .count{
+	display:inline-block;
+	height:25px;
+	line-height:23px;
+	position:relative;
+}
+
+.like > .count > span{
+	display:inline-block;
+	padding:0px 4px;
+	border:1px solid #999999;
+	font-size:14px;
+	color:#717171;
+}
+
+.like > .count > i{
+	width:5px; height:5px;
+	display:block;
+	position:absolute;
+	background:#fdfcf0 url("../../../../../../resources/images/public/sprite_corner.png") no-repeat;
+}
+
+.like > .count > .corner-LT{ left:0px; top:0px; background-position:0px 0px; }
+.like > .count > .corner-RT{ right:0px; top:0px; background-position:-5px 0px; }
+.like > .count > .corner-LB{ left:0px; bottom:0px; background-position:0px -5px; }
+.like > .count > .corner-RB{ right:0px; bottom:0px; background-position:-5px -5px; }
+
+.like > .count > .corner-arrow{
+	width:4px; height:6px;
+	left:-3px; top:50%;
+	margin-top:-4px;
+	background-position:-10px 0px;	
+}
+
+
+.boxing > .spec{
+	font-size:15px;
+}
+
+.spec > .actor > span{
+	display:inline-block;
+	vertical-align:top;
+}
+
+.spec .viewMore{
+	font-size:13px;
+	color:gray;
+}
+
+
+.boxing > .reserveBtn{
+	width:91px; height:35px;
+	display:inline-block;
+	margin-top:5px;
+	background:url("../../../../../../resources/images/public/sprite_btn(cgv).png") no-repeat 0px 0px;
+}
+
+
+
+/* ------------------------------------------------------ ● sub_container ● ------------------------------------------------------ */
+#sub_container{
+	overflow:hidden;
+	margin-top:50px;
+}
+
+
+
+/* banner */
+.banner{
+	width:160px;
+	float:right;
+}
+
+.banner > img{
+	margin-bottom:10px;
+}
+
+
+
+/* tabMenuAndContents */
+.tabMenuAndContents{
+	width:800px;
+	float:left;
+}
+
+
+.tabMenu{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	margin:0px 0px 40px 0px;
+	text-align:center;
+}
+
+.tabMenu > li{
+	margin-left:-6px;
+	display:inline-block;
+}
+
+.tabMenu > li:first-child{
+	padding-left:20px;
+	background:url("../../../../../../resources/images/public/sprite_corner.png") 0px -20px no-repeat;
+}
+
+.tabMenu > li:first-child > a{ background:#e71a0f; }
+
+.tabMenu > li:last-child{
+	padding-right:19px;
+	background:url("../../../../../../resources/images/user/module/movie/detail/header/tabMenu_rightRibbon.png") right 0px no-repeat;
+}
+
+.tabMenu > li > a{
+	height:39px;
+	line-height:39px;
+	display:inline-block;
+	padding:0px 15px;
+	text-decoration:none;
+	background:#e71a0f url("../../../../../../resources/images/user/module/movie/detail/header/tabMenu_division.gif") 0px 12px no-repeat;
+	font-family:"GGV_Font02"; font-size:15px;
+	color:white;
+}
+
+.tabMenu > .on > a:before{
+	width:26px; height:39px;
+	content:"";
+	display:inline-block;
+	padding-right:5px;
+	vertical-align:top;
+	background:url("../../../../../../resources/images/user/module/movie/detail/header/finger_icon.png") 0px 50% no-repeat;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------ */

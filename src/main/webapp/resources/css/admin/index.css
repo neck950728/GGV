@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@font-face{ font-family:"GGV_Font"; src:url("../../../resources/font/드림고딕.TTF"); }
+
+*{ box-sizing:border-box; }
+body{ min-width:1349px; background:#fdfcf0; }
+
+.wrap{
+	width:462px;
+	margin:12% auto;
+}
+
+
+/* logo */
+.logo{
+	text-align:center;
+	margin-left:25px; margin-bottom:100px;
+}
+
+
+/* admin_btn */
+.buttons > button{
+	width:150px; height:70px;
+	font-family:"GGV_Font"; font-size:16px;
+	border-radius:10px;
+	cursor:pointer;
+}
+
+.buttons > button:focus{ outline:none; }

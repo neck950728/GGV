@@ -1,0 +1,194 @@
+<%@page import="admin.movie.bean.ActorDTO"%>
+<%@page import="admin.movie.bean.DirectorDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="admin.movie.bean.MovieDTO"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<%
+	MovieDTO movieDTO = (MovieDTO)request.getAttribute("movie");
+
+	// director
+	List<DirectorDTO> director_list = movieDTO.getDirector_list();
+	String director = "";
+	for(DirectorDTO directorDTO : director_list){
+		director += directorDTO.getKo_name() + ", ";
+	}
+	
+	if(director.isEmpty()){
+		director = "(알 수 없음)";
+	}else{
+		director = director.substring(0, director.lastIndexOf(","));
+	}
+	
+	
+	// actor
+	List<ActorDTO> actor_list = movieDTO.getActor_list();
+	int loop = 2;
+	if(actor_list.size() < 2){
+		loop = actor_list.size();
+	}
+	
+	String actor = "";
+	for(int i = 0; i < loop; i ++){
+		ActorDTO actorDTO = actor_list.get(i);
+		actor += actorDTO.getKo_name() + ", ";
+	}
+	
+	if(actor_list.size() > 0){
+		actor = actor.substring(0, actor.lastIndexOf(","));
+	}
+%>
+
+<html>
+<head>
+	<script src="${pageContext.request.contextPath}/resources/js/user/movie/public.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/module/movie/detail/header.css">
+	
+	<c:if test="${view_type == 'main'}">
+		<script src="${pageContext.request.contextPath}/resources/js/user/movie/detail/main.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/movie/detail/main.css">
+	</c:if>
+	
+	<c:if test="${view_type == 'trailer'}">
+		<script src="${pageContext.request.contextPath}/resources/js/user/movie/trailer.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/user/movie/detail/trailer.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/movie/detail/trailer.css">
+	</c:if>
+	
+	<c:if test="${view_type == 'stillCut'}">
+		<script src="${pageContext.request.contextPath}/resources/js/user/movie/detail/stillCut.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/movie/detail/stillCut.css">
+	</c:if>
+	
+	<c:if test="${view_type == 'cast'}">
+		<script src="${pageContext.request.contextPath}/resources/js/user/movie/detail/cast.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/movie/detail/cast.css">
+	</c:if>
+	
+	<c:if test="${view_type == 'comment'}">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		
+		<script src="${pageContext.request.contextPath}/resources/js/user/movie/detail/comment.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/movie/detail/comment.css">
+	</c:if>
+	
+	<script type="text/javascript">
+		$(function(){
+			if(<%= actor.length() %> >= 49){
+				$(".spec > .actor > span").css("width", "605px");
+			}
+		});
+		
+		$(function(){
+			var view_type = "${view_type}";
+			switch(view_type){
+				case "main":
+					$(".tabMenu > .main").addClass("on");
+					break;
+				case "trailer":
+					$(".tabMenu > .trailer").addClass("on");
+					break;
+				case "stillCut":
+					$(".tabMenu > .stillCut").addClass("on");
+					break;
+				case "cast":
+					$(".tabMenu > .cast").addClass("on");
+					break;
+				case "comment":
+					$(".tabMenu > .comment").addClass("on");
+			}
+		});
+		
+		$(function(){
+			var isContainsInWishList = false;
+			if(g_memberInfo != null){
+				$.each(g_memberInfo.wishList, function(index, value){
+					if(value.movie_code == $(".like > button").attr("code")){
+						isContainsInWishList = true;
+						
+						return false;
+					}
+				});
+			}
+			
+			if(isContainsInWishList){
+				$(".like > button").attr("class", "on");
+			}
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<h1 id="title">영화 상세</h1>
+		<div id="movie_info">
+			<img src="${movie.poster}" class="poster">
+			
+			<div class="boxing">
+				<div class="title">
+					<strong>${movie.title}</strong> <span>상영 중</span><br>
+				</div>
+				<div class="popularity">
+					<div class="reserveRate">
+						<span class="label">예매율</span>
+						<span class="rate">${movie.reserveRate}%</span>
+					</div>
+					<em>|</em>
+					<div class="like">
+						<button code="${movie.code}"></button>
+						<span class="count">
+							<span>${movie.like_}</span>
+							<i class="corner-LT"></i>
+							<i class="corner-RT"></i>
+							<i class="corner-LB"></i>
+							<i class="corner-RB"></i>
+							<i class="corner-arrow"></i>
+						</span>
+					</div>
+				</div>
+				
+				<div class="spec">
+					<p class="summary">
+						<strong>개요</strong> &nbsp;
+						<span class="genre">${movie.genre}</span> <em>|</em>
+						<span class="nation">${movie.nation}</span> <em>|</em>
+						<span class="showtimes">${movie.showtimes}</span> <em>|</em>
+						<span class="premier">${movie.premier} 개봉</span>
+					</p>
+					
+					<p class="director">
+						<strong>감독</strong> &nbsp;
+						<span><%= director %></span>
+					</p>
+					
+					<c:if test="<%= actor_list.size() > 0 %>">
+						<p class="actor">
+							<strong>출연</strong> &nbsp;
+							<span><%= actor %></span> <a href="${pageContext.request.contextPath}/movie/detail/cast?mID=${movie.code}" class="viewMore">더 보기</a>
+						</p>
+					</c:if>
+					
+					<p class="grade">
+						<strong>등급</strong> &nbsp;
+						<span>${movie.grade}</span>
+					</p>
+				</div>
+				
+				<c:if test="${movie.screeningInfo_list.size() > 0}">
+					<a href="${pageContext.request.contextPath}/movie/reserve?code=${movie.code}" class="reserveBtn"></a>
+				</c:if>
+			</div>
+		</div>
+		<div id="sub_container">
+			<div class="banner">
+				<img src="${pageContext.request.contextPath}/resources/images/user/module/movie/detail/header/banner01.jpg">
+				<img src="${pageContext.request.contextPath}/resources/images/user/module/movie/detail/header/banner02.jpg">
+			</div>
+			<div class="tabMenuAndContents">
+				<ul class="tabMenu">
+					<li class="main"><a href="${pageContext.request.contextPath}/movie/detail?mID=${movie.code}">주요 정보</a></li>
+					<li class="trailer"><a href="${pageContext.request.contextPath}/movie/detail/trailer?mID=${movie.code}">트레일러</a></li>
+					<li class="stillCut"><a href="${pageContext.request.contextPath}/movie/detail/stillCut?mID=${movie.code}">스틸컷</a></li>
+					<li class="cast"><a href="${pageContext.request.contextPath}/movie/detail/cast?mID=${movie.code}">감독/출연</a></li>
+					<li class="comment"><a href="${pageContext.request.contextPath}/movie/detail/comment?mID=${movie.code}">평점/리뷰</a></li>
+				</ul>

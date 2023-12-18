@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.movieMapper">
+	
+	<select id="selectRandomMovie" resultType="MovieDTO">
+		SELECT * FROM movie ORDER BY RAND() LIMIT 1
+	</select>
+	
+
+	<select id="selectMovieChart" resultType="MovieDTO">
+		<![CDATA[ SELECT * FROM movie WHERE premier <= DATE_FORMAT(NOW(), '%Y.%m.%d') ORDER BY reserveRate DESC, premier DESC ]]>
+	</select>
+	
+	
+	<select id="selectRecommendMovieListFromPreMovieChart" resultType="MovieDTO">
+		<![CDATA[ SELECT * FROM movie WHERE premier > DATE_FORMAT(NOW(), '%Y.%m.%d') ORDER BY reserveRate DESC LIMIT 3 ]]>
+	</select>
+	
+	<select id="selectPremierListFromPreMovieChart" resultType="String">
+		<![CDATA[ SELECT DISTINCT premier FROM movie WHERE premier > DATE_FORMAT(NOW(), '%Y.%m.%d') ORDER BY premier ASC ]]>
+	</select>
+	
+	<select id="selectPreMovieChart" parameterType="String" resultType="MovieDTO">
+		SELECT * FROM movie WHERE premier = #{premier} ORDER BY reserveRate DESC
+	</select>
+	
+	
+	<select id="selectStillCutList" parameterType="String" resultType="StillCutDTO">
+		SELECT * FROM stillCut WHERE code = #{code}
+	</select>
+	
+	<select id="selectTrailerList" parameterType="String" resultType="TrailerDTO">
+		SELECT * FROM trailer WHERE code = #{code}
+	</select>
+	
+	<select id="selectDirectorList" parameterType="String" resultType="DirectorDTO">
+		SELECT * FROM director WHERE code = #{code}
+	</select>
+	
+	<select id="selectActorList" parameterType="String" resultType="ActorDTO">
+		SELECT * FROM actor WHERE code = #{code}
+	</select>
+	
+	<select id="selectScreeningInfoList" parameterType="String" resultType="ScreeningInfoDTO">
+		SELECT * FROM screening_info WHERE movie_code = #{movie_code}
+	</select>
+	
+	
+	<update id="addLike" parameterType="String">
+		UPDATE movie SET like_ = like_ + 1 WHERE code = #{code}
+	</update>
+	
+	<update id="subtractLike" parameterType="String">
+		UPDATE movie SET like_ = like_ - 1 WHERE code = #{code}
+	</update>
+	
+	
+	<select id="selectTopRankMovie" parameterType="int" resultType="MovieDTO">
+		SELECT * FROM
+		(
+			SELECT
+				@rownum := @rownum + 1 AS ROWNUM,
+				a.*
+			FROM
+				(SELECT * FROM movie ORDER BY reserveRate DESC) a,
+				(SELECT @rownum := 0) b
+		) c
+		WHERE c.ROWNUM = #{num}
+	</select>
+	
+	<select id="selectTotalTrailerCount" resultType="int">
+		SELECT COUNT(*) FROM trailer
+	</select>
+	
+	<select id="selectCurPageTrailerList" parameterType="java.util.Map" resultType="TrailerDTO">
+		<![CDATA[
+			SELECT * FROM
+			(
+				SELECT
+					@rownum := @rownum + 1 AS ROWNUM,
+					a.*
+				FROM
+					trailer a,
+					(SELECT @rownum := 0) b
+			) c
+			WHERE c.ROWNUM >= #{startNum} AND c.ROWNUM <= #{endNum}
+		]]>
+	</select>
+	
+	<select id="selectTotalSearchedTrailerCount" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM trailer WHERE title LIKE CONCAT('%', #{keyword}, '%') 
+	</select>
+	
+	<select id="selectCurPageSearchedTrailerList" parameterType="java.util.Map" resultType="TrailerDTO">
+		<![CDATA[
+			SELECT * FROM
+			(
+				SELECT
+					@rownum := @rownum + 1 AS ROWNUM,
+					a.*
+				FROM
+					(SELECT * FROM trailer WHERE title LIKE CONCAT('%', #{keyword}, '%')) a,
+					(SELECT @rownum := 0) b
+			) c
+			WHERE c.ROWNUM >= #{startNum} AND c.ROWNUM <= #{endNum}
+		]]>
+	</select>
+	
+	<select id="selectMovie" parameterType="String" resultType="MovieDTO">
+		SELECT * FROM movie WHERE code = #{code}
+	</select>
+	
+	
+	<select id="selectTotalCommentCount" resultType="int">
+		SELECT COUNT(*) FROM comment_ WHERE movie_code = #{movie_code}
+	</select>
+	
+	<select id="selectScoreDistribution" parameterType="java.util.Map" resultType="int">
+		SELECT COUNT(*) FROM comment_ WHERE movie_code = #{movie_code} AND score = #{score}
+	</select>
+	
+	<select id="selectGenderDistribution" parameterType="java.util.Map" resultType="int">
+		SELECT COUNT(*) FROM comment_ WHERE movie_code = #{movie_code} AND gender = #{gender}
+	</select>
+	
+	<select id="selectAgeGroupDistribution" parameterType="java.util.Map" resultType="int">
+		SELECT COUNT(*) FROM comment_ WHERE  movie_code = #{movie_code} AND age_group = #{age_group}
+	</select>
+	
+	<select id="selectScorePerGender" parameterType="java.util.Map" resultType="double">
+		SELECT IFNULL(ROUND(AVG(score), 2), 0) FROM comment_ WHERE movie_code = #{movie_code} AND gender = #{gender}
+	</select>
+	
+	<select id="selectScorePerAgeGroup" parameterType="java.util.Map" resultType="double">
+		SELECT IFNULL(ROUND(AVG(score), 2), 0) FROM comment_ WHERE movie_code = #{movie_code} AND age_group = #{age_group}
+	</select>
+	
+	<select id="selectCommentList_OrderBySympathy" parameterType="java.util.Map" resultType="CommentDTO">
+		<![CDATA[
+			SELECT * FROM
+			(
+				SELECT
+					@rownum := @rownum + 1 AS ROWNUM,
+					a.*
+				FROM
+					(SELECT * FROM comment_ WHERE movie_code = #{movie_code} ORDER BY sympathy DESC) a,
+					(SELECT @rownum := 0) b
+			) c
+			WHERE c.ROWNUM >= #{startNum} AND c.ROWNUM <= #{endNum}
+		]]>
+	</select>
+	
+	<select id="selectCommentList_OrderByDateCreated" parameterType="java.util.Map" resultType="CommentDTO">
+		<![CDATA[
+			SELECT * FROM
+			(
+				SELECT
+					@rownum := @rownum + 1 AS ROWNUM,
+					a.*
+				FROM
+					(SELECT * FROM comment_ WHERE movie_code = #{movie_code} ORDER BY dateCreated DESC) a,
+					(SELECT @rownum := 0) b
+			) c
+			WHERE c.ROWNUM >= #{startNum} AND c.ROWNUM <= #{endNum}
+		]]>
+	</select>
+	
+	<select id="selectMyComment" parameterType="java.util.Map" resultType="CommentDTO">
+		SELECT * FROM comment_ WHERE id = #{id} AND movie_code = #{movie_code}
+	</select>
+	
+	<insert id="insertComment" parameterType="CommentDTO">
+		INSERT INTO comment_ VALUES(#{id}, #{gender}, #{age_group}, #{movie_code}, #{score}, #{review}, DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s'), #{sympathy}, #{notSympathy})
+	</insert>
+	
+	<delete id="deleteComment" parameterType="java.util.Map">
+		DELETE FROM comment_ WHERE id = #{id} AND movie_code = #{movie_code}
+	</delete>
+	
+	<update id="addSympathy" parameterType="CommentVoteDTO">
+		UPDATE comment_ SET sympathy = sympathy + 1 WHERE id = #{vote_target} AND movie_code = #{movie_code}
+	</update>
+	
+	<update id="addNotSympathy" parameterType="CommentVoteDTO">
+		UPDATE comment_ SET notSympathy = notSympathy + 1 WHERE id = #{vote_target} AND movie_code = #{movie_code}
+	</update>
+	
+	<select id="selectCommentVote" parameterType="CommentVoteDTO" resultType="CommentVoteDTO">
+		SELECT * FROM comment_vote WHERE id = #{id} AND vote_target = #{vote_target} AND movie_code = #{movie_code}
+	</select>
+	
+	<insert id="insertCommentVote" parameterType="CommentVoteDTO">
+		INSERT INTO comment_vote VALUES(#{id}, #{vote_target}, #{movie_code}, #{vote_type})
+	</insert>
+	
+	<delete id="deleteCommentVote" parameterType="java.util.Map">
+		DELETE FROM comment_vote WHERE vote_target = #{vote_target} AND movie_code = #{movie_code}
+	</delete>
+	
+	
+	<select id="selectAllMovieList" resultType="MovieDTO">
+		SELECT * FROM movie
+	</select>
+	
+	<select id="selectReserveCodeDuplicateCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM reserve WHERE reserve_code = #{reserve_code}
+	</select>
+	
+	<select id="selectScreeningInfo" parameterType="String" resultType="ScreeningInfoDTO">
+		SELECT * FROM screening_info WHERE identification_code = #{identification_code}
+	</select>
+	
+	<update id="addReserved_seat" parameterType="ScreeningInfoDTO">
+		UPDATE screening_info SET reserved_seat = #{reserved_seat} WHERE identification_code = #{identification_code}
+	</update>
+	
+	<update id="subtractReserved_seat" parameterType="ScreeningInfoDTO">
+		UPDATE screening_info SET reserved_seat = #{reserved_seat} WHERE identification_code = #{identification_code}
+	</update>
+	
+	<update  id="addRemaining_seat_count" parameterType="ReserveDTO">
+		UPDATE screening_info SET remaining_seat_count = remaining_seat_count + #{personnel} WHERE identification_code = #{screeningInfo_identification}
+	</update>
+	
+	<update  id="subtractRemaining_seat_count" parameterType="ReserveDTO">
+		UPDATE screening_info SET remaining_seat_count = remaining_seat_count - #{personnel} WHERE identification_code = #{screeningInfo_identification}
+	</update>
+	
+	<insert id="insertReserve" parameterType="ReserveDTO">
+		INSERT INTO reserve VALUES(#{reserve_code}, #{id}, #{screeningInfo_identification}, #{movie_code}, #{poster}, #{title}, #{main_region}, #{sub_region}, #{date_}, #{time_}, #{personnel}, #{seat}, #{total_price})
+	</insert>
+	
+	<delete id="deleteReserve" parameterType="ReserveDTO">
+		DELETE FROM reserve WHERE id = #{id} AND screeningInfo_identification = #{screeningInfo_identification} AND seat = #{seat}
+	</delete>
+	
+	
+	<select id="selectSearchedMovieList" parameterType="String" resultType="MovieDTO">
+		SELECT * FROM movie WHERE title LIKE CONCAT('%', #{keyword}, '%')
+	</select>
+</mapper>

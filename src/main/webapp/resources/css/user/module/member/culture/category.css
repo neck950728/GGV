@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+#category{
+	overflow:hidden;
+	padding:20px 0px;
+	border-top:1px solid #d1d1d1;
+	border-bottom:1px solid #d1d1d1;
+}
+
+#category > .center_align_wrap{
+	display:table;
+	margin:0px auto;
+}
+
+#category .category, #category .cart{
+	float:left;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+#category .cart{
+	border-left:1px solid #cfcfcf;
+}
+
+.category > li, .cart > li{
+	float:left;
+	margin:0px 25px;
+}
+
+.category > li > a, .cart > li > a{
+	font-family:"GGV_Font01";
+	font-size:19px;
+	text-decoration:none;
+}
+
+.category > li > a{
+	color:#6a6f77;
+}
+
+.cart > li > a{
+	color:#0a0a0a;
+}
+
+.cart > li > .cart_count{
+	display:inline-block;
+	position:relative;
+	bottom:1px;
+    padding:2.5px 5px;
+    background-color:#dc291e;
+    font-size:13px;
+    color:#fffefe;
+}

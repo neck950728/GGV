@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#container{ text-align:center; margin-top:50px; }
+
+
+.join_button{
+	width:330px;
+	margin-top:50px; padding:2px;
+	border:none;
+	background-color:#e71a0f;
+	cursor:pointer;
+}
+
+.join_button > span{
+	display:block;
+	line-height:55px;
+	border:1px solid #f07469;
+	font-family:"GGV_Font02"; font-size:19px; color:white;
+}

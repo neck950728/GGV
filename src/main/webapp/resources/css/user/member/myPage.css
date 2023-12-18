@@ -1,0 +1,510 @@
+@charset "UTF-8";
+
+#container{ background: url(../../../../resources/images/public/brick_bg.png) repeat-x; }
+#center_align_wrap{ width:980px; margin:0px auto; }
+
+
+
+/* ============================== ● my_info ● ============================== */
+#my_info{
+	height:450px;
+	padding:60px 60px 0 60px;
+	background:url("../../../../resources/images/user/member/myPage/my_info_bg.gif") no-repeat;
+}
+
+
+
+/* ----------------------------------------- profile ----------------------------------------- */
+.profile{
+	overflow:hidden;
+}
+
+
+/* left */
+.left{
+	width:135px; height:135px;
+	position:relative;
+	margin-right:40px;
+	float:left;
+}
+
+.left > .profile_bg{
+	width:100%; height:100%;
+	position:absolute;
+	background:url("../../../../resources/images/user/member/myPage/profile_bg.png") no-repeat;
+}
+
+.left > img{
+	width:100%; height:100%;
+}
+
+
+/* right */
+.right{
+	display:flex;
+	align-items:center;
+	height:135px;
+	float:left;
+}
+
+.right > p{
+	position:relative;
+	margin:0px;
+}
+
+.right > p > span{
+	line-height:37px;
+	font-size:27px; font-weight:bold;
+	color:#342929;
+}
+
+.right > p > .changeInfo{
+	position:absolute;
+	top:-7px;
+	cursor:pointer;
+}
+/* ----------------------------------------------------------------------------------------- */
+
+
+
+/* ---------------- other ---------------- */
+.other{
+	display:flex;
+	justify-content:center;
+	margin-top:65px;
+}
+
+.other > ul{
+	display:inline-block;
+	overflow:hidden;
+	margin:0px; padding:0px;
+	list-style:none;
+	border:2px solid #796343;
+}
+
+.other > ul > li{
+	display:flex;
+	align-items:center; justify-content:center;
+	width:190px; height:120px;
+	float:left;
+	border-right:2px dotted #796343;
+	cursor:pointer;
+}
+
+.other > ul > li:last-child{
+	border-right:none;
+}
+
+.other > ul > li > .boxing > img{
+	display:block;
+	margin:0px auto 10px auto;
+}
+
+.other > ul > li > .boxing > span{
+	margin:0px auto;
+	font-size:16px; font-weight:bold;
+	color:#313131;
+}
+/* -------------------------------------- */
+/* ===================================================================== */
+
+
+
+/* ================================================== ● show ● ================================================== */
+#show{
+	overflow:hidden;
+	margin-top:40px;
+}
+
+
+
+/* ------------------------------------------ side_menu ------------------------------------------ */
+#show > .side_menu{
+	width:160px;
+	float:left;
+	margin-right:25px;
+}
+
+.side_menu > ul{
+	list-style:none;
+	margin:0px; padding:0px;
+}
+
+
+
+/* simple_profile */
+ul > .simple_profile{
+	padding:12px 12px 20px 12px;
+	border:1px solid #929292; border-radius:7px;
+}
+
+
+.simple_profile > .image{
+	width:135px; height:135px;
+	position:relative;
+	margin-bottom:20px;
+}
+
+.image > .bg{
+	width:100%; height:100%;
+	position:absolute;
+	background:url("../../../../resources/images/user/member/myPage/simple_profile_bg.png") no-repeat;
+}
+
+.image > img{
+	width:100%; height:100%;
+}
+
+
+.simple_profile > .name{
+	text-align:center;
+}
+
+.name > span{
+	font-weight:bold;
+}
+
+
+
+/* button */
+ul > .button{
+	margin-top:15px;
+	padding:18px 0px;
+	text-align:center;
+	border:1px solid #c1c1c1; border-radius:7px;
+	cursor:pointer;
+}
+
+.button > em{
+	font-style:normal;
+	font-size:26px;
+	font-weight:bold;
+}
+
+.button > span{
+	font-size:14px;
+}
+
+.button.on{
+	background-color:#ff1e1e;
+	color:white;
+}
+/* ----------------------------------------------------------------------------------------------- */
+
+
+
+/* ------------------------------------------------------------------ detail ------------------------------------------------------------------ */
+#show > .detail{
+	width:795px;
+	float:left;
+}
+
+#show > .detail > ul > .none{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-size:20px; font-weight:bold;
+}
+
+
+
+/* wishList */
+.detail > .wishList{
+	margin:0px; padding:0px;
+	list-style:none;
+	overflow:hidden;
+}
+
+.wishList > li{
+	width:185px;
+	position:relative;
+	float:left;
+	margin-right:18px;
+}
+
+.wishList > li:nth-child(4n){
+	margin-right:0px !important;
+}
+
+.wishList > li:nth-child(n + 5){
+	margin-top:40px;
+}
+
+.wishList > li > img{
+	width:100%; height:261px;
+	border:6px solid #252525;
+}
+
+.wishList > li > .delete_button{
+	width:32px; height:32px;
+	position:absolute;
+	top:0px; right:0px;
+	background:url("../../../../resources/images/user/member/myPage/delete_button.png") no-repeat;
+	cursor:pointer;
+}
+
+.wishList > li > h1{
+	font-size:15px;
+	margin:6px 0px;
+}
+
+.wishList > li > span{
+	font-size:13px;
+	color:#999999;
+}
+
+
+
+/* watchedMovies */
+.detail > .watchedMovies .poster{
+	position:relative;
+	float:left;
+	margin-right:20px;
+}
+
+.watchedMovies .poster > img{
+	width:110px; height:157px;
+}
+
+.watchedMovies .poster > .delete_button{
+	width:32px; height:32px;
+	position:absolute;
+	top:0px; right:0px;
+	background:url("../../../../resources/images/user/member/myPage/delete_button.png") no-repeat;
+	cursor:pointer;
+}
+
+
+.detail > .watchedMovies .go_write{
+	display:inline-block;
+	margin-top:10px;
+	padding:2px;
+	border:none; border-radius:5px;
+	background-color:#232323;
+	cursor:pointer;
+}
+
+.go_write > span{
+	width:150px; height:35px;
+	display:inline-block;
+	line-height:33px;
+	text-align:center;
+	border:1px solid #5b5b58; border-radius:5px;
+	font-size:12px;
+	color:white;
+}
+
+
+
+/* reserveList */
+.detail > .reserveList > li > img{
+	width:110px; height:157px;
+	float:left;
+	margin-right:20px;
+}
+
+.detail > .reserveList .delete_button{
+	margin-top:10px;
+	padding:2px;
+	border:none; border-radius:5px;
+	background-color:#ce0000;
+	cursor:pointer;
+}
+
+.detail > .reserveList .delete_button > span{
+	width:85px; height:35px;
+	display:inline-block;
+	line-height:33px;
+	text-align:center;
+	border:1px solid #f07469; border-radius:5px;
+	font-size:12px;
+	color:white;
+}
+
+
+
+/* paymentList */
+.detail > .paymentList > li > img{
+	width:150px; height:150px;
+	float:left;
+	margin-right:40px;
+}
+
+.detail > .paymentList > li > .boxing > h1{
+	font-family:"GGV_Font01" !important;
+}
+
+.detail > .paymentList > li > .boxing > h3{
+	display:inline-block;
+	margin:0px 7px 0px 0px;
+	font-size:15px;
+}
+
+
+
+/* wishList, watchedMovies, reserveList, paymentList */
+.detail > .wishList_viewMore_btn, .detail > .watchedMovies_viewMore_btn, .detail > .reserveList_viewMore_btn, .detail > .paymentList_viewMore_btn{
+	width:258px; height:46px;
+	display:block;	
+	margin:40px auto 0px auto;
+	background:url("../../../../resources/images/user/member/myPage/viewMore_button_bg.gif") repeat-x;
+	border:none;
+	cursor:pointer;
+}
+
+.wishList_viewMore_btn > span, .watchedMovies_viewMore_btn, .reserveList_viewMore_btn > span, .paymentList_viewMore_btn > span{
+	padding-left:20px;
+	background:url("../../../../resources/images/public/sprite_icon(cgv).png") -300px 6px no-repeat;
+	font-size:17px; font-weight:bold;
+}
+
+/* watchedMovies, reserveList, paymentList */
+.detail > .watchedMovies, .detail > .reserveList, .detail > .paymentList{
+	margin:0px; padding:0px;
+	list-style:none;
+}
+
+.watchedMovies > li, .reserveList > li, .paymentList > li{
+	overflow:hidden;
+	padding:15px 0px;
+	border-bottom:1px solid #d6d4ca;
+}
+
+.watchedMovies > li:first-child, .reserveList > li:first-child, .paymentList > li:first-child{
+	padding-top:0px !important;
+}
+
+.watchedMovies > li > .boxing, .reserveList > li > .boxing, .paymentList > li > .boxing{
+	float:left;
+}
+
+.watchedMovies > li > .boxing > h1, .reserveList > li > .boxing > h1, .paymentList > li > .boxing > h1{
+	margin:10px 0px;
+	font-family:"GGV_Font02";
+	font-size:22px;
+	font-weight:normal;
+}
+
+.watchedMovies > li > .boxing > span, .reserveList > li > .boxing > span, .paymentList > li > .boxing > span{
+	line-height:25px;
+	font-size:15px;
+}
+
+/* reserveList, paymentList */
+.detail > .reserveList .delete_button, .detail > .paymentList .delete_button{
+	margin-top:10px;
+	padding:2px;
+	border:none; border-radius:5px;
+	background-color:#ce0000;
+	cursor:pointer;
+}
+
+.detail > .reserveList .delete_button > span, .detail > .paymentList .delete_button > span{
+	width:85px; height:35px;
+	display:inline-block;
+	line-height:33px;
+	text-align:center;
+	border:1px solid #f07469; border-radius:5px;
+	font-size:12px;
+	color:white;
+}
+
+
+
+/* change_info */
+.change_info .header > h3{
+	margin:0px;
+	padding-bottom:15px;
+	font-size:25px; font-weight:normal;
+	border-bottom:1px solid #929292;
+}
+
+
+.change_info .body > table{
+	width:100%;
+	border-collapse:collapse;
+}
+
+.body > table tr{
+	height:55px;
+	border-bottom:1px solid #c1c1c1;
+}
+
+.body > table tr > th{
+	width:20%;
+}
+
+.body > table input[type="text"], .body > table input[type="password"]{
+	height:33px;
+	padding-left:7px;
+	border:2px solid #bbbbbb;
+	background-color:#fdfcf0;
+}
+
+.body > table .pw > td{
+	display:block;
+}
+
+.body > table .pw input[name="pw"]{
+	margin-top:4px;
+	margin-bottom:2px;
+}
+
+.body > table .pw input[name="confirm_pw"]{
+	margin-top:2px;
+	margin-bottom:4px;
+}
+
+.body > table .gender input{
+	margin-right:2px;
+}
+
+.body > table .phone input{
+	width:75px;
+}
+
+.body > table .email input:read-only, .body > table .phone input:read-only{
+	color:rgb(170, 170, 170);
+}
+
+.body > table .email button, .body > table .phone button{
+	width:55px; height:33px;
+	vertical-align:top;
+	background-color:#f2f0e5;
+	border:2px solid #bbbbbb; border-radius:7px;
+	color:#333333;
+	font-size:13px; font-weight:bold;
+}
+
+.body > table .email .auth, .body > table .phone .auth{
+	width:120px;
+}
+
+.body > table .error_msg{
+	margin-left:10px;
+	color:red;
+	font-size:14px; font-weight:bold;
+}
+
+
+.change_info .footer{
+	margin-top:25px;
+	text-align:center;
+}
+
+.footer > button{
+	width:100px;
+	padding:1px;
+	background-color:red;
+	border:none;
+}
+
+.footer > button > span{
+	display:block;
+	line-height:45px;
+	border:1px solid #f07469;
+	font-family:"GGV_Font02";
+	color:white;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------ */
+/* ============================================================================================================ */

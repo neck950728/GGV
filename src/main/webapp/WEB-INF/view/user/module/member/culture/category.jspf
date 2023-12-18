@@ -1,0 +1,31 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var g_type = "${type}";
+	</script>
+	<script src="${pageContext.request.contextPath}/resources/js/user/module/member/culture/category.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/module/member/culture/category.css">
+</head>
+<body>
+	<div id="category">
+		<div class="center_align_wrap">
+			<ul class="category">
+				<li class="combo"><a href="${pageContext.request.contextPath}/member/culture/more?type=combo">콤보</a></li>
+				<li class="popcorn"><a href="${pageContext.request.contextPath}/member/culture/more?type=popcorn">팝콘</a></li>
+				<li class="drink"><a href="${pageContext.request.contextPath}/member/culture/more?type=drink">음료</a></li>
+				<li class="snack"><a href="${pageContext.request.contextPath}/member/culture/more?type=snack">스낵</a></li>
+			</ul>
+			<ul class="cart">
+				<li>
+					<a href="${pageContext.request.contextPath}/member/culture/cart">장바구니</a>
+					<span class="cart_count"></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

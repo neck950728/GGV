@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#content > #foundIDList{
+	border:1px solid #c6c6c6;
+}
+
+#foundIDList > ul{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+#foundIDList > ul > li{
+	padding-bottom:10px;
+}
+
+#foundIDList > ul > li:first-child{
+	padding-top:10px;
+}

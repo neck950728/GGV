@@ -1,0 +1,32 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<script src="${pageContext.request.contextPath}/resources/js/admin/module/header.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin/module/header.css">
+</head>
+<body>
+	<div id="header">
+		<div id="header_center_align_wrap">
+			<div id="gnb"> <!-- Global Navigation Bar -->
+				<a href="${pageContext.request.contextPath}/member/logout">로그아웃</a> <span>|</span>
+				<a href="${pageContext.request.contextPath}/admin/index">관리</a> <span>|</span>
+				<a href="${pageContext.request.contextPath}/member/helpCenter/public">고객센터</a>
+			</div>
+		
+			<div id="im_wrap"> <!-- Important Wrapper -->
+				<div id="im_left">
+					<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/public/logo(small).png"></a>
+					<img src="${pageContext.request.contextPath}/resources/images/admin/module/header/admin_icon.png" class="admin_icon">
+				</div>
+				
+				<div id="im_center">
+					<img src="${pageContext.request.contextPath}/resources/images/admin/module/header/movie_illustration.png">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

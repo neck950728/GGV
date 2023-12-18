@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#container{
+	width:675px;
+	margin:100px auto 70px auto;
+	overflow:hidden;
+}
+
+#container span{ font-family:"GGV_Font02"; }
+
+
+.left{ float:left; }
+.right{ float:left; margin-top:20px; margin-left:30px; }

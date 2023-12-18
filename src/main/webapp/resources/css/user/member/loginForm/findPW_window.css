@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+#content > #title{
+	
+}
+
+#title > .title-warn{
+	margin-top:10px;
+	line-height:20px;
+	color:red;
+}
+
+
+#content > #checkID_area{
+	
+}
+
+#checkID_area > input{
+	vertical-align:bottom;
+}
+
+#checkID_area > button{
+	width:47px; height:35px;
+	line-height:29px;
+}
+
+#checkID_area > input, #setNewPW_area > input{
+	width:220px; height:35px;
+	padding-left:7px;
+	border:2px solid #b5b5b5;
+}
+
+#checkID_area > button, #setNewPW_area > button{
+	padding:2px;
+    border:none;
+    background-color:#2a2a2a;
+    cursor:pointer;
+    appearance:none;
+}
+
+#checkID_area > button > span, #setNewPW_area > button > span{
+	display:block;
+	border:1px solid #5b5b58;
+	font-size:12px; font-weight:bold;
+	color:white;
+}
+
+
+#content > #setNewPW_area{
+	
+}
+
+#setNewPW_area > label{
+	width:102px;
+	display:inline-block;
+}
+
+#setNewPW_area > input{
+	margin-bottom:5px;
+}
+
+#setNewPW_area > button{
+	width:60px; height:40px;
+	line-height:34px;
+	margin-top:20px;
+}

@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+#container{
+	min-height:547px;
+	padding:85px 0px;
+	background:url("../../../../../resources/images/admin/movie/brick_bg.jpg") repeat;
+}
+
+#center_align_wrap{
+	width:854px;
+	margin:0px auto;
+	overflow:hidden;
+}
+
+#center_align_wrap ul{
+	list-style:none;
+	margin:0px; padding:0px;
+}
+
+
+
+/* viewAll_btn */
+.viewAll_btn{
+	width:80px; height:27px;
+	float:left;
+	border:1px solid #dadada;
+	background:#e71a0f;
+	font-family:"GGV_Font02"; font-size:14px;
+	color:#ffffff;
+	cursor:pointer;
+}
+
+
+
+/* search */
+.search{
+	height:27px;
+	float:right;
+	position:relative;
+	margin-bottom:7px;
+}
+
+.search > input{
+	width:200px; height:100%;
+	padding-left:5px;
+	font-size:13px;
+}
+
+.search > button{
+	height:100%;
+	position:absolute;
+	top:0px; right:0px;
+	border:none;
+	background-color:#e71a0f;
+	font-family:"GGV_Font02"; font-size:14px;
+	color:#ffffff;
+}
+
+
+
+/* division */
+.division{
+	background-color:#ffec84;
+	line-height:30px;
+	border-radius:4px;
+	border-top:3px solid gold; border-bottom:2px solid #ffdb1b;
+	clear:both;
+}
+
+.division > ul{
+	overflow:hidden;
+}
+
+.division > ul > li{
+	font-weight:bold;
+}
+
+
+.division > ul > li, .movie_info > li{
+	width:135px;
+	float:left;
+	text-align:center;
+	font-size:13px;
+}
+
+.division > ul > .poster, .movie_info > .poster{
+	width:90px;
+}
+
+.division > ul > .title, .division > ul > .director, .division > ul > .genre,
+.movie_info > .title, .movie_info > .director, .movie_info > .genre{
+	margin-left:13px;
+}
+
+
+
+/* movie_list */
+.movie_list > .movie{
+	margin-top:10px;
+	border-radius:4px;
+	background-color:#fff2ae;
+}
+
+.movie > .movie_info{
+	overflow:hidden;
+}
+
+
+.movie_info > li{
+	height:129px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	float:left;
+}
+
+.movie_info > li > span{
+	font-size:12px;
+}
+
+
+.movie_info > .poster{
+	overflow:hidden;
+	border-radius:4px;
+}
+
+.poster > a{
+	width:100%; height:100%;
+}
+
+.poster > a > img{
+	width:100%; height:100%;
+}
+
+
+.movie_info > .title a{
+	text-decoration:none;
+	font-weight:bold;
+	color:black;
+}
+
+
+.movie_info > .delete_btn{
+	width:50px;
+	text-align:initial;
+}
+
+.delete_btn img{
+	width:26px;
+	cursor:pointer;
+}
+
+
+
+/* page_nav */
+#page_nav{
+	text-align:center;
+	line-height:40px;
+	margin-top:20px;
+	border-radius:4px;
+	background-color:#ffe556;
+}
+
+#page_nav a{
+	padding-right:8px;
+	vertical-align:middle;
+	font-size:15px; font-weight:bold;
+	text-decoration:none;
+	color:black;
+	cursor:pointer;
+}
+
+#page_nav > .head, #page_nav > .tail{
+	width:27px; height:28px;
+	display:inline-block;
+    border:1px solid #cacac1;
+    background:#faf9ed url("../../../../../resources/images/public/paging_button.gif") no-repeat;
+    font-size:0px;
+}
+
+#page_nav > .head{
+	background-position:4px -104px;
+}
+
+#page_nav > .tail{
+	background-position:5px -156px;
+}
+
+#page_nav > .back, #page_nav > .next{
+	height:28px;
+	display:inline-block;
+    line-height:25px;
+	border:1px solid #cacac1;
+    background:#faf9ed url("../../../../../resources/images/public/paging_button.gif") no-repeat;
+    font-size:12px;
+}
+
+#page_nav > .back{
+	margin-right:8px;
+	padding:0px 10px 0px 24px;
+	background-position:0px 0px;
+}
+
+#page_nav > .next{
+	padding:0px 24px 0px 10px;
+	background-position:right -52px;
+}
+
+#page_nav > .curPage{
+	color:#993333;
+	text-decoration:underline;
+}

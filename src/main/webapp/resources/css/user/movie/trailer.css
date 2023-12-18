@@ -1,0 +1,389 @@
+@charset "UTF-8";
+
+#container{ background:url("../../../../resources/images/public/brick_bg.png") repeat-x; }
+#center_align_wrap{ width:970px; margin:0px auto; }
+
+
+
+/* topHonor_trailer */
+#topHonor_trailer:before, #topHonor_trailer:after{
+	width:14px; height:450px;
+	position:absolute;
+	top:0px;
+	content:"";
+}
+
+#topHonor_trailer:before{
+	left:0px;
+	background:url("../../../../resources/images/public/bricks_before_bg.png") no-repeat 0px 0px;
+}
+
+#topHonor_trailer:after{
+	right:0px;
+	background:url("../../../../resources/images/public/bricks_after_bg.png") no-repeat 0px 0px;
+}
+
+#topHonor_trailer{
+	height:450px;
+	position:relative;
+	padding:25px 40px;
+	background-color:#1d1b1c;
+}
+
+
+#topHonor_trailer > h3{ margin:0px 0px 10px 0px; }
+
+#topHonor_trailer > h3 > .hd_icon, .layer_player > h3 > .hd_icon{
+	display:inline-block;
+	padding:2px 4px;
+	font-size:11px;
+	border:1px solid #2a6fb6;
+	color:#2a6fb6;
+}
+
+#topHonor_trailer > h3 > .title, .layer_player > h3 > .title{
+	font-size:15px;
+	color:white;
+}
+
+
+#topHonor_trailer > .topHonor_trailer_left{
+	width:640px; height:360px;
+	padding-top:0px;
+	float:left;
+}
+
+
+#topHonor_trailer > .topHonor_trailer_right{
+	width:230px; height:360px;
+	float:right;
+}
+
+.topHonor_trailer_right > .movie_info{
+	height:41%;
+	overflow:hidden;
+}
+
+.movie_info > a > img{
+	width:90px; height:125px;
+	display:block;
+	float:left;
+	margin-right:12px;
+}
+
+.movie_info > div{
+	width:125px;
+	float:left;
+	margin-top:16px;
+}
+
+.movie_info .movie_grade{
+	width:21px; height:21px;
+    display:inline-block;
+    vertical-align:middle;
+    font-size:0px;
+    background:url("../../../../resources/images/public/sprite_icon(cgv).png") no-repeat;
+}
+
+.movie_info .movie_title{
+	margin-left:-1px;
+	text-decoration:none;
+	font-family:"GGV_Font02"; font-size:13px;
+	color:#cccccc;
+}
+
+.movie_info .movie_genre, .movie_info .movie_premier{
+	font-size:12px;
+	color:#ababab;
+}
+
+.movie_info .reserveBtn{
+	width:57px; height:25px;
+	display:inline-block;
+	margin-top:10px;
+	background:url("../../../../resources/images/public/sprite_btn(cgv).png") no-repeat -96px 0px;
+}
+
+
+.topHonor_trailer_right > .movie_description{
+	height:59%;
+}
+
+.movie_description > span{
+	height:11%;
+	display:block;
+	font-size:14px; font-weight:bold;
+	color:#d0d0d0;
+}
+
+.movie_description > textarea{
+	width:100%; height:89%;
+	padding:5px;
+	line-height:17px;
+	border:none;
+	background:#161415;
+	font-size:13px;
+	color:#999999;
+	resize:none;
+}
+
+
+
+/* trailer_recommend */
+#trailer_recommend{
+	text-align:center;
+}
+
+#trailer_recommend > h3{
+	margin-top:50px; margin-bottom:10px;
+	background:url("../../../../resources/images/user/movie/trailer/trailer_recommend_bg.jpg") repeat-x 0px 50%;
+}
+
+#trailer_recommend > h3 > img{
+	padding:0px 8px;
+	background-color:#fdfcf0;
+}
+
+
+#trailer_recommend > ul, #hd_trailer > .trailer_list > ul{
+	overflow:hidden;
+	padding:0px;
+	margin-bottom:0px; margin-left:-16.6px;
+}
+
+#trailer_recommend > ul > li, #hd_trailer > .trailer_list > ul > li{
+	width:230px;
+	position:relative;
+	margin-left:16.6px; margin-bottom:50px;
+	text-align:left;
+	float:left;
+	list-style:none;
+	cursor:pointer;
+}
+
+.trailer_img{
+	width:100%; height:135px;
+}
+
+.play_btn{
+	width:44px; height:44px;
+	right:5px; bottom:28px;
+	position:absolute;
+	background:url("../../../../resources/images/public/sprite_icon(cgv).png") no-repeat -60px -21px;
+}
+
+.trailer_title{
+	font-family:"GGV_Font01"; font-size:13px;
+}
+
+
+
+/* banner */
+#banner{
+	padding-top:40px;
+	border-top:2px solid black;
+}
+
+
+
+/* hd_trailer */
+#hd_trailer{
+	text-align:center;
+	border-bottom:2px solid black;
+}
+
+#hd_trailer > h3{
+	margin-top:30px; margin-bottom:10px;
+	background:url("../../../../resources/images/user/movie/trailer/hd_trailer_bg.jpg") repeat-x 0px 50%;
+}
+
+#hd_trailer > h3 > img{
+	padding:0px 8px;
+	background-color:#fdfcf0;
+}
+
+
+#hd_trailer > .viewAll_btn{
+	width:80px; height:27px;
+	float:left;
+	border:1px solid #b7b7b7;
+	background:#e71a0f;
+	color:#ffffff;
+	font-family:"GGV_Font02"; font-size:14px;
+	cursor:pointer;
+}
+
+
+#hd_trailer > .search_trailer{
+	float:right;
+	position:relative;
+	text-align:right; height:27px;
+	margin-bottom:25px;
+}
+
+.search_trailer > input{
+	width:190px; height:100%;
+	padding-left:5px;
+	font-size:13px;
+}
+
+.search_trailer > button{
+	height:100%;
+	top:0px; right:0px;
+	position:absolute;
+	border:none;
+	background-color:#e71a0f;
+	font-family:"GGV_Font02"; font-size:14px;
+	color:#ffffff;
+	cursor:pointer;
+}
+
+
+#hd_trailer > .trailer_list{
+	clear:both;
+}
+
+#hd_trailer .noSearchedResult{
+	display:inline-block;
+	margin:20px 0px 75px 0px;
+	font-size:14px;
+}
+
+
+
+/* page_nav */
+#page_nav{
+	text-align:center;
+	margin-top:20px;
+}
+
+#page_nav > span{
+	padding-right:8px;
+	vertical-align:middle;
+	font-size:15px; font-weight:bold;
+	cursor:pointer;
+}
+
+#page_nav > .head, #page_nav > .tail{
+	width:27px; height:28px;
+	display:inline-block;
+    border:1px solid #cacac1;
+    background:#faf9ed url("../../../../resources/images/public/paging_button.gif") no-repeat;
+    font-size:0px;
+}
+
+#page_nav > .head{
+	background-position:4px -104px;
+}
+
+#page_nav > .tail{
+	background-position:5px -156px;
+}
+
+#page_nav > .back, #page_nav > .next{
+	height:28px;
+	display:inline-block;
+    line-height:25px;
+	border:1px solid #cacac1;
+    background:#faf9ed url("../../../../resources/images/public/paging_button.gif") no-repeat;
+    font-size:12px;
+}
+
+#page_nav > .back{
+	margin-right:8px;
+	padding:0px 10px 0px 24px;
+	background-position:0px 0px;
+}
+
+#page_nav > .next{
+	padding:0px 24px 0px 10px;
+	background-position:right -52px;
+}
+
+#page_nav > .curPage{
+	color:#993333;
+	text-decoration:underline;
+}
+
+
+
+/* layer_player */
+.layer_player_bg{
+	width:100%; height:100%;
+	position:fixed;
+	top:0px; left:0px;
+	background-color:rgba(0, 0, 0, 0.8);
+}
+
+.layer_player_wrap{
+	width:100%; height:100%;
+	position:fixed;
+	top:0px; left:0px;
+}
+
+.layer_player{
+	width:1000px; height:695px;
+	position:absolute;
+	top:0px; bottom:0px; left:0px; right:0px;
+	margin:auto;
+	padding:15px 20px;
+	background-color:#101010;
+}
+
+
+.layer_player > h3{
+	position:relative;
+	margin:0px 0px 15px 0px;
+}
+
+.layer_player > h3 > .close_btn{
+	width:18px; height:18px;
+	position:absolute;
+	right:0px;
+	border:none;
+	background:url("../../../../resources/images/public/sprite_btn(cgv).png") no-repeat -72px -62px;
+	cursor:pointer;
+}
+
+
+.layer_player > .layer_player_left{
+	width:800px; height:450px;
+	padding-top:0px;
+	float:left;
+}
+
+
+.layer_player > .layer_player_right{
+	width:140px;
+	float:right;
+}
+
+.layer_player_right > .movie_info > a > img{
+	width:100%; height:200px;
+	display:block;
+}
+
+.layer_player_right > .movie_info > div{
+	width:100%;
+	margin-top:10px;
+}
+
+
+.layer_player > .movie_description{
+	clear:both;
+	padding-top:20px;
+}
+
+.layer_player > .movie_description > span{
+	display:inline-block;
+	margin-bottom:10px;
+	font-size:14px; font-weight:bold;
+	color:#d0d0d0;
+}
+
+.layer_player > .movie_description > textarea{
+	width:800px; height:125px;
+	border:1px solid #4d4d4d;
+	background-color:#101010;
+	color:#808080;
+}

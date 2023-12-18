@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+#container{
+	
+}
+
+
+#banner{
+	width:980px;
+	margin:0px auto 30px auto;
+}
+
+
+#product_list{
+	width:980px;
+	margin:0px auto;
+}
+
+#product_list > ul{
+	width:100%;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	list-style:none;
+}
+
+#product_list > ul > li{
+	width:50%;
+	float:left;
+	margin-top:60px;
+}
+
+#product_list > ul > li:nth-child(odd){
+	padding-right:30px;
+}
+
+#product_list > ul > li:nth-child(even){
+	padding-left:30px;
+}
+
+#product_list .title{
+	position:relative;
+	padding-bottom:10px;
+	margin-bottom:30px;
+	border-bottom:1px solid #989797;
+}
+
+.title > h1{
+	margin:0px;
+	font-size:30px; font-weight:500;
+}
+
+.title > button{
+	width:23px; height:23px;
+	position:absolute;
+	top:10px; right:0px;
+	border:none;
+	background:url("../../../../../resources/images/user/member/culture/main/more_button.png");
+	font-size:0px;
+	cursor:pointer;
+}
+
+.title ~ ul{ /* ~ : 일반 형제 선택자 */
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+.title ~ ul > li{
+	position:relative;
+	margin-bottom:20px;
+	overflow:hidden;
+	cursor:pointer;
+}
+
+.title ~ ul > li > img{
+	width:160px;
+	height:160px;
+	float:left;
+}
+
+.title ~ ul > li > .txt{
+	float:left;
+	margin:35px 0px 0px 25px;
+}
+
+.title ~ ul > li > .txt > h3{
+	margin:0px;
+}
+
+.title ~ ul > li > .txt > p{
+	margin:0px;
+}
+
+.title ~ ul > li > .txt > p:nth-of-type(1){
+	padding:5px 0px 20px 0px;
+	color:#6a6f77;
+}
+
+.title ~ ul > li > .txt > p:nth-of-type(2){
+	font-size:20px;
+}
+
+.title ~ ul > li > .buttons{
+	display:none;
+	position:absolute;
+	top:50px; right:120px;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+.title ~ ul > li > .buttons > li{
+	float:left;
+	padding:5px;
+	font-size:0px;
+}
+
+.title ~ ul > li > .buttons > li > a{
+	width:50px; height:50px;
+	display:inline-block;
+}
+
+.title ~ ul > li > .buttons > li > .cart{
+	background:url("../../../../../resources/images/user/member/culture/main/buttons.png") -1px -1px no-repeat;
+}
+
+.title ~ ul > li > .buttons > li > .cart:hover{
+	background:url("../../../../../resources/images/user/member/culture/main/buttons.png") -157px -1px no-repeat;
+}
+
+.title ~ ul > li > .buttons > li > .payment{
+	background:url("../../../../../resources/images/user/member/culture/main/buttons.png") -105px -1px no-repeat;
+}
+
+.title ~ ul > li > .buttons > li > .payment:hover{
+	background:url("../../../../../resources/images/user/member/culture/main/buttons.png") -261px -1px no-repeat;
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<context:component-scan base-package="admin" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	<context:component-scan base-package="index" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	<context:component-scan base-package="member" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	<context:component-scan base-package="movie" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/movie/detail/comment/*" />
+			<mvc:mapping path="/movie/reserve/**" />
+			<mvc:mapping path="/member/wishList/*" />
+			<mvc:mapping path="/member/myPage/**" />
+			<mvc:mapping path="/member/culture/cart/**" />
+			<mvc:mapping path="/member/helpCenter/**" />
+			
+			<mvc:exclude-mapping path="/member/helpCenter/public" />
+			<mvc:exclude-mapping path="/member/helpCenter/writeForm/unload" />
+			
+			<bean class="interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**" />
+			<bean class="interceptor.AdminLoginInterceptor" />
+		</mvc:interceptor>
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/movie/detail/commentModule/**" />
+			<mvc:mapping path="/movie/reserve/*" />
+			<mvc:mapping path="/member/join/joinForm/*" />
+			<mvc:mapping path="/member/loginForm/**" />
+			<mvc:mapping path="/member/wishList/*" />
+			<mvc:mapping path="/member/myPage/**" />
+			<mvc:mapping path="/member/culture/cart/**" />
+			<mvc:mapping path="/member/helpCenter/**" />
+			
+			<mvc:exclude-mapping path="/member/join/joinForm/emailAuthCheck" />
+			<mvc:exclude-mapping path="/member/loginForm" />
+			<mvc:exclude-mapping path="/member/myPage" />
+			<mvc:exclude-mapping path="/member/helpCenter/public" /> <mvc:exclude-mapping path="/member/helpCenter/private" />
+			<mvc:exclude-mapping path="/member/helpCenter/public/writeForm" /> <mvc:exclude-mapping path="/member/helpCenter/private/writeForm" />
+			<mvc:exclude-mapping path="/member/helpCenter/public/modifyForm" /> <mvc:exclude-mapping path="/member/helpCenter/private/modifyForm" />
+			<mvc:exclude-mapping path="/member/helpCenter/public/detail" /> <mvc:exclude-mapping path="/member/helpCenter/private/detail" />
+			
+			<bean class="interceptor.BadDirectRequestInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	
+	<mvc:view-resolvers>
+		<mvc:jsp prefix="/WEB-INF/view/" />
+	</mvc:view-resolvers>
+	
+	
+	<mvc:default-servlet-handler/>
+	<mvc:annotation-driven />
+</beans>

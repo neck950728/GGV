@@ -1,0 +1,33 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<script src="${pageContext.request.contextPath}/resources/external_js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/external_css/normalize.css">
+	
+	<script type="text/javascript">
+		$.ajaxSetup({
+			dataFilter:function(data, dataType){
+				if(data == "requireLogin_default"){
+					location.href = "${pageContext.request.contextPath}/member/loginForm";
+					KMJ.ERROR; // 고의적으로 오류를 발생시켜서 이후 로직(success:function)이 실행되지 않도록 함
+				}else if(data == "requireLogin_confirm"){
+					if(confirm("로그인이 필요한 서비스입니다.\n로그인 페이지로 이동하시겠습니까?")){
+						location.href = "${pageContext.request.contextPath}/member/loginForm";
+						KMJ.ERROR;
+					}
+				}else if(data == "requireLogin_childWindow"){
+					parent.document.location.href = "${pageContext.request.contextPath}/member/loginForm";
+					KMJ.ERROR;
+				}else{
+					return data;
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

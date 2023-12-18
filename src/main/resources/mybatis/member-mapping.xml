@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.memberMapper">
+
+	<insert id="insertTempMember" parameterType="TempMemberDTO">
+		INSERT INTO temp_member VALUES(#{id}, #{pw}, #{name}, #{birth}, #{gender}, #{email}, #{phone},
+		DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i'), #{email_auth_key})
+	</insert>
+	
+	<delete id="deleteTempMember" parameterType="String">
+		DELETE FROM temp_member WHERE id = #{id}
+	</delete>
+	
+	<select id="selectTempMember" parameterType="String" resultType="TempMemberDTO">
+		SELECT * FROM temp_member WHERE id = #{id}
+	</select>
+	
+	<insert id="insertMember" parameterType="MemberDTO">
+		INSERT INTO member VALUES(#{id}, #{pw}, #{name}, #{birth}, #{gender}, #{email}, #{phone}, #{join_date}, #{email_auth_key})
+	</insert>
+	
+	<select id="selectMember" parameterType="String" resultType="MemberDTO">
+		SELECT * FROM member WHERE id = #{id}
+	</select>
+	
+	<select id="selectWishList" parameterType="String" resultType="WishListDTO">
+		SELECT * FROM wishList WHERE id = #{id}
+	</select>
+	
+	
+	<select id="selectMemberList" parameterType="java.util.Map" resultType="MemberDTO">
+		<if test='!used_destination.contains("@")'>
+			SELECT * FROM member WHERE phone = #{used_destination}
+		</if>
+		<if test='used_destination.contains("@")'>
+			SELECT * FROM member WHERE email = #{used_destination}
+		</if>
+	</select>
+	
+	<update id="updatePassword" parameterType="java.util.Map">
+		UPDATE member SET pw = #{pw} WHERE id = #{id}
+	</update>
+	
+	
+	<insert id="insertWishList" parameterType="WishListDTO">
+		INSERT INTO wishList VALUES(#{id}, #{movie_code})
+	</insert>
+	
+	<delete id="deleteWishList" parameterType="WishListDTO">
+		DELETE FROM wishList WHERE id = #{id} AND movie_code = #{movie_code}
+	</delete>
+	
+	
+	<select id="selectMyWatchedMovies" parameterType="String" resultType="WatchedMovieDTO">
+		SELECT * FROM watchedMovies WHERE id = #{id}
+	</select>
+	
+	<delete id="deleteMyWatchedMovies" parameterType="WatchedMovieDTO">
+		DELETE FROM watchedMovies WHERE reserve_code = #{reserve_code}
+	</delete>
+	
+	<select id="selectMyReserveList" parameterType="String" resultType="ReserveDTO">
+		SELECT * FROM reserve WHERE id = #{id}
+	</select>
+	
+	<select id="selectMyPaymentHistoryList" parameterType="String" resultType="PaymentHistoryDTO">
+		SELECT * FROM paymentHistory WHERE id = #{id}
+	</select>
+	
+	<!-- 참고 사이트 : https://blog.naver.com/dngu_icdi/221907892981 -->
+	<resultMap id="MovieInfoNecessaryForMyPage" type="java.util.Map">
+		<result property="title" column="title" />
+		<result property="premier" column="premier" />
+		<result property="poster" column="poster" />
+	</resultMap>
+	
+	<select id="selectMovieInfoForMyPage" parameterType="String" resultMap="MovieInfoNecessaryForMyPage">
+		SELECT title, premier, poster FROM movie WHERE code = #{movie_code}
+	</select>
+	
+	<update id="updateMember" parameterType="MemberDTO">
+		UPDATE member SET
+		<if test='!pw.equals("")'>pw = #{pw},</if> <!-- 검색 키워드 : MyBatis 동적 쿼리 -->
+		name = #{name}, birth = #{birth}, gender = #{gender}, email = #{email}, phone = #{phone}
+		WHERE id = #{id}
+	</update>
+	
+	
+	<select id="selectCart" parameterType="String" resultType="cartDTO">
+		SELECT * FROM cart WHERE id = #{id}
+	</select>
+	
+	<select id="selectCartItemCount" parameterType="CartDTO" resultType="int">
+		SELECT count FROM cart WHERE id = #{id} AND item = #{item}
+	</select>
+	
+	<update id="updateCart" parameterType="CartDTO">
+		UPDATE cart SET count = #{count} WHERE id = #{id} AND item = #{item}
+	</update>
+	
+	<insert id="insertCart" parameterType="CartDTO">
+		INSERT INTO cart VALUES(#{id}, #{item}, #{price}, #{count})
+	</insert>
+	
+	<delete id="deleteCart" parameterType="CartDTO">
+		DELETE FROM cart WHERE id = #{id} AND item = #{item}
+	</delete>
+	
+	<delete id="deleteCartList" parameterType="java.util.Map">
+		DELETE FROM cart WHERE
+		<foreach collection="cart_list" item="cart" index="index" separator="OR">
+			(id = #{cart.id} AND item = #{cart.item})
+		</foreach>
+	</delete>
+	
+	<select id="selectOrderCodeDuplicateCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM paymentHistory WHERE order_code = #{order_code}
+	</select>
+	
+	<insert id="insertPaymentHistory" parameterType="java.util.Map">
+		INSERT INTO paymentHistory VALUES
+		<foreach collection="cart_list" item="cart" index="index" separator=",">
+			(#{order_code}, #{cart.id}, #{cart.item}, #{cart.price}, #{cart.count})
+		</foreach>
+	</insert>
+	
+	<delete id="deletePaymentHistory" parameterType="PaymentHistoryDTO">
+		DELETE FROM paymentHistory WHERE order_code = #{order_code} AND id = #{id} AND item = #{item}
+	</delete>
+	
+	
+	<select id="selectTotalHelpCenterCount" parameterType="java.util.Map" resultType="int">
+		<choose>
+			<when test='type.equals("public")'>
+				<if test="searchKeyword == null">
+					SELECT COUNT(*) FROM helpCenter WHERE isPrivate = 'FALSE'
+				</if>
+				<if test="searchKeyword != null">
+					SELECT COUNT(*) FROM helpCenter WHERE isPrivate = 'FALSE' AND (id LIKE CONCAT('%', #{searchKeyword}, '%') OR title LIKE CONCAT('%', #{searchKeyword}, '%')) 
+				</if>
+			</when>
+			<when test='type.equals("private")'>
+				<if test='id.equals("admin")'>
+					<if test="searchKeyword == null">
+						SELECT COUNT(*) FROM helpCenter WHERE isPrivate = 'TRUE'
+					</if>
+					<if test="searchKeyword != null">
+						SELECT COUNT(*) FROM helpCenter WHERE isPrivate = 'TRUE' AND (id LIKE CONCAT('%', #{searchKeyword}, '%') OR title LIKE CONCAT('%', #{searchKeyword}, '%'))
+					</if>
+				</if>
+				<if test='!id.equals("admin")'>
+					<if test="searchKeyword == null">
+						SELECT COUNT(*) FROM helpCenter WHERE id = #{id} AND isPrivate = 'TRUE'
+					</if>
+					<if test="searchKeyword != null">
+						SELECT COUNT(*) FROM helpCenter WHERE id = #{id} AND isPrivate = 'TRUE' AND (id LIKE CONCAT('%', #{searchKeyword}, '%') OR title LIKE CONCAT('%', #{searchKeyword}, '%'))
+					</if>
+				</if>
+			</when>
+		</choose>
+	</select>
+	
+	<select id="selectCurPageHelpCenterList" parameterType="java.util.Map" resultType="HelpCenterDTO">
+		<choose>
+			<when test='type.equals("public")'>
+				<if test="searchKeyword == null">
+					<![CDATA[
+						SELECT * FROM
+						(
+							SELECT
+								@rownum := @rownum + 1 AS num,
+								a.*
+							FROM
+								(SELECT * FROM helpCenter WHERE isPrivate = 'FALSE' ORDER BY date_ DESC) a,
+								(SELECT @rownum := 0) b
+						) c
+						WHERE c.num >= #{startNum} AND c.num <= #{endNum}
+					]]>
+				</if>
+				<if test="searchKeyword != null">
+					<![CDATA[
+						SELECT * FROM
+						(
+							SELECT
+								@rownum := @rownum + 1 AS num,
+								a.*
+							FROM
+								(
+									SELECT * FROM
+										helpCenter
+									WHERE
+										isPrivate = 'FALSE' AND (id LIKE CONCAT('%', #{searchKeyword}, '%') OR title LIKE CONCAT('%', #{searchKeyword}, '%'))
+									ORDER BY date_ DESC
+								) a,
+								(SELECT @rownum := 0) b
+						) c
+						WHERE c.num >= #{startNum} AND c.num <= #{endNum}
+					]]>
+				</if>
+			</when>
+			<when test='type.equals("private")'>
+				<choose>
+					<when test='id.equals("admin")'>
+						<if test="searchKeyword == null">
+							<![CDATA[
+								SELECT * FROM
+								(
+									SELECT
+										@rownum := @rownum + 1 AS num,
+										a.*
+									FROM
+										(SELECT * FROM helpCenter WHERE isPrivate = 'TRUE' ORDER BY date_ DESC) a,
+										(SELECT @rownum := 0) b
+								) c
+								WHERE c.num >= #{startNum} AND c.num <= #{endNum}
+							]]>
+						</if>
+						<if test="searchKeyword != null">
+							<![CDATA[
+								SELECT * FROM
+								(
+									SELECT
+										@rownum := @rownum + 1 AS num,
+										a.*
+									FROM
+										(
+											SELECT * FROM
+												helpCenter
+											WHERE
+												isPrivate = 'TRUE' AND (id LIKE CONCAT('%', #{searchKeyword}, '%') OR title LIKE CONCAT('%', #{searchKeyword}, '%'))
+											ORDER BY date_ DESC
+										) a,
+										(SELECT @rownum := 0) b
+								) c
+								WHERE c.num >= #{startNum} AND c.num <= #{endNum}
+							]]>
+						</if>
+					</when>
+					<when test='!id.equals("admin")'>
+						<if test="searchKeyword == null">
+							<![CDATA[
+								SELECT * FROM
+								(
+									SELECT
+										@rownum := @rownum + 1 AS num,
+										a.*
+									FROM
+										(SELECT * FROM helpCenter WHERE id = #{id} AND isPrivate = 'TRUE' ORDER BY date_ DESC) a,
+										(SELECT @rownum := 0) b
+								) c
+								WHERE c.num >= #{startNum} AND c.num <= #{endNum}
+							]]>
+						</if>
+						<if test="searchKeyword != null">
+							<![CDATA[
+								SELECT * FROM
+								(
+									SELECT
+										@rownum := @rownum + 1 AS num,
+										a.*
+									FROM
+										(
+											SELECT * FROM
+												helpCenter
+											WHERE
+												id = #{id} AND isPrivate = 'TRUE' AND (id LIKE CONCAT('%', #{searchKeyword}, '%') OR title LIKE CONCAT('%', #{searchKeyword}, '%'))
+											ORDER BY date_ DESC
+										) a,
+										(SELECT @rownum := 0) b
+								) c
+								WHERE c.num >= #{startNum} AND c.num <= #{endNum}
+							]]>
+						</if>
+					</when>
+				</choose>
+			</when>
+		</choose>
+	</select>
+	
+	<select id="selectArticleCodeDuplicateCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM helpCenter WHERE article_code = #{article_code}
+	</select>
+	
+	<insert id="insertHelpCenter" parameterType="HelpCenterDTO">
+		INSERT INTO helpCenter VALUES(#{article_code}, #{id}, #{title}, #{content}, DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s'), 1, #{isPrivate})
+	</insert>
+	
+	<select id="selectHelpCenter" parameterType="String" resultType="HelpCenterDTO">
+		SELECT * FROM helpCenter WHERE article_code = #{article_code}
+	</select>
+	
+	<select id="selectHelpCenterHits" parameterType="java.util.Map" resultType="int">
+		SELECT COUNT(*) FROM helpCenter_hits WHERE id = #{id} AND article_code = #{article_code}
+	</select>
+	
+	<insert id="insertHelpCenterHits" parameterType="java.util.Map">
+		INSERT INTO helpCenter_hits VALUES(#{id}, #{article_code})
+	</insert>
+	
+	<insert id="addHelpCenterHitsCount" parameterType="String">
+		UPDATE helpCenter SET hits = hits + 1 WHERE article_code = #{article_code}
+	</insert>
+	
+	<select id="selectHelpCenterCommentList" parameterType="String" resultType="HelpCenterCommentDTO">
+		SELECT * FROM helpCenter_comment WHERE article_code = #{article_code}
+	</select>
+	
+	<insert id="insertHelpCenterComment" parameterType="HelpCenterCommentDTO">
+		INSERT INTO helpCenter_comment VALUES(#{identification_code}, #{article_code}, #{comment_}, DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s'))
+	</insert>
+	
+	<update id="updateHelpCenterComment" parameterType="HelpCenterCommentDTO">
+		UPDATE helpCenter_comment SET comment_ = #{comment_} WHERE identification_code = #{identification_code}
+	</update>
+	
+	<delete id="deleteOneHelpCenterComment" parameterType="String">
+		DELETE FROM helpCenter_comment WHERE identification_code = #{identification_code}
+	</delete>
+	
+	<update id="updateHelpCenter" parameterType="HelpCenterDTO">
+		UPDATE helpCenter SET title = #{title}, content = #{content} WHERE article_code = #{article_code}
+	</update>
+	
+	<delete id="deleteHelpCenter" parameterType="String">
+		DELETE FROM helpCenter WHERE article_code = #{article_code}
+	</delete>
+	
+	<delete id="deleteHelpCenterHits" parameterType="String">
+		DELETE FROM helpCenter_hits WHERE article_code = #{article_code}
+	</delete>
+	
+	<delete id="deleteHelpCenterComment" parameterType="String">
+		DELETE FROM helpCenter_comment WHERE article_code = #{article_code}
+	</delete>
+</mapper>

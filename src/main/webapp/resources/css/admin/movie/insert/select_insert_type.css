@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+#container{
+	background:url("../../../../../resources/images/admin/movie/brick_bg.jpg") repeat;
+	height:547px;
+}
+
+.vertical_align_wrap{
+	width:100%;
+	height:100%;
+	display:table;
+}
+
+.buttons{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+
+.buttons > form{ display:inline-block; }
+
+.buttons button{
+	width:150px; height:70px;
+	font-family:"GGV_Font02"; font-size:16px;
+	border-radius:10px;
+	cursor:pointer;
+}
+
+.buttons button:focus{ outline:none; }
+.buttons > .personally_insert_btn{ background:linear-gradient(to right, #ff7877, red); }
+.buttons .excel_insert_btn{ background:linear-gradient(to right, #8d90ff, blue); }
+
+
+
+/* dialog_bg */
+.dialog_bg{
+	width:100%; height:100%;
+	position:fixed;
+	left:0px; top:0px;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* excel_insert_dialog, success_dialog */
+.excel_insert_dialog, .success_dialog{
+	width:310px; height:140px;
+	position:fixed;
+	
+	/* 중앙 배치 */
+	left:50%; top:50%;
+	margin-left:-155px; /* 310 / 2 */
+	margin-top:-70px; /* 140 / 2 */
+	
+	padding:20px 20px 0px 20px;
+	text-align:center;
+	background-color:#292929;
+	border:7px solid #212121; border-radius:15px;
+}
+
+.excel_insert_dialog > .close_btn, .success_dialog > .close_btn{
+	width:18px; height:18px;
+	position:absolute;
+	top:4px; right:4px;
+	border:none;
+	background:url("../../../../../resources/images/public/sprite_btn(cgv).png") no-repeat -72px -62px;
+	cursor:pointer;
+}
+
+.excel_insert_dialog > form > div{ margin:15px 0px; }
+
+.excel_insert_dialog > form > div > input[type='text']{
+	height:30px;
+	padding-left:3px;
+	border:1px solid #a5a5a5;
+	font-size:14px;
+	color:gray;
+}
+
+.excel_insert_dialog > form > div > .find_file_btn{
+	width:75px; height:30px;
+	padding:0px;
+	vertical-align:top;
+    background-color:#3a3a3a;
+    font-size:13px;
+    color:white;
+}
+
+.excel_insert_dialog > .register_btn, .success_dialog > div > button{
+	width:50px; height:30px;
+	border:1px solid #b7b086; border-radius:3px;
+    background-color:#fff5b8;
+    font-family:"GGV_Font02"; font-size:14px;
+    color:#2d2d2d;
+}
+
+
+.success_dialog > div{ margin-top:15px; }
+
+.success_dialog > div > span{
+	font-size:18px; font-weight:bold;
+	color:gold;
+}
+
+.success_dialog > div > button{ margin-top:15px; }
+
+
+
+/* wait */
+.wait{
+	width:212px; height:46px;
+	position:fixed;	
+	left:50%; top:41%;
+	margin-left:-106px;
+	margin-top:-23px;
+	line-height:26px;
+	text-align:center;
+	font-family:"GGV_Font02"; font-size:20px;
+	color:yellow;
+}

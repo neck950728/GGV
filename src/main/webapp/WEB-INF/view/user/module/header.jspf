@@ -1,0 +1,77 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>GGV</title>
+	
+	<script src="${pageContext.request.contextPath}/resources/js/user/module/header.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/user/module/header.css">
+</head>
+<body>
+	<div id="header">
+		<div id="header_center_align_wrap">
+			<c:if test="${sessionScope.id == null}">
+				<div id="gnb"> <!-- Global Navigation Bar -->
+					<a href="${pageContext.request.contextPath}/member/loginForm">로그인</a> <span>|</span>
+					<a href="${pageContext.request.contextPath}/member/join/joinFormMain">회원가입</a> <span>|</span>
+					<a href="${pageContext.request.contextPath}/member/helpCenter/public">고객센터</a>
+				</div>
+			</c:if>
+			<c:if test="${sessionScope.id != null && sessionScope.id ne 'admin'}">
+				<div id="gnb"> <!-- Global Navigation Bar -->
+					<a href="${pageContext.request.contextPath}/member/logout">로그아웃</a> <span>|</span>
+					<a href="${pageContext.request.contextPath}/member/myPage">My GGV</a> <span>|</span>
+					<a href="${pageContext.request.contextPath}/member/helpCenter/public">고객센터</a>
+				</div>
+			</c:if>
+			<c:if test="${sessionScope.id eq 'admin'}">
+				<div id="gnb"> <!-- Global Navigation Bar -->
+					<a href="${pageContext.request.contextPath}/member/logout">로그아웃</a> <span>|</span>
+					<a href="${pageContext.request.contextPath}/admin/index">관리</a> <span>|</span>
+					<a href="${pageContext.request.contextPath}/member/helpCenter/public">고객센터</a>
+				</div>
+			</c:if>
+			
+			<div id="im_wrap"> <!-- Important Wrapper -->
+				<div id="im_left">
+					<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/public/logo(small).png"></a>
+				</div>
+				
+				<div id="im_center">
+					<img src="${pageContext.request.contextPath}/resources/images/user/module/header/cultureplex_illustration.png">
+					<ul class="menu_wrap">
+						<li class="menu">
+							<a style="cursor:pointer;">영화</a>
+							<div class="sub_menu_wrap">
+								<i></i>
+								<div class="sub_menu">
+									<ul>
+										<li><a href="${pageContext.request.contextPath}/movie/movieChart">무비차트</a></li>
+										<li><a href="${pageContext.request.contextPath}/movie/trailer">HD 트레일러</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="menu" style="margin:0px 30px;">
+							<a href="${pageContext.request.contextPath}/movie/reserve">예매</a>
+						</li>
+						<li class="menu">
+							<a href="${pageContext.request.contextPath}/member/culture">컬처</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="im_right">
+					<div id="search">
+						<input type="text"><button>검색</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

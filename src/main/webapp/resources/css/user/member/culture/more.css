@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+#container{
+	width:980px;
+	margin:0px auto;
+}
+
+
+#title{
+	margin-top:50px;
+	padding-bottom:10px;
+	font-size:25px; font-weight:bold;
+	border-bottom:1px solid #9b9b9b;
+}
+
+#title > span{
+	font-size:17px; font-weight:normal;
+	margin-left:10px;
+}
+
+
+#item_list{
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	list-style:none;
+}
+
+#item_list > li{
+	float:left;
+	margin-right:85px;
+	cursor:pointer;
+}
+
+#item_list > li:nth-child(3n){
+	margin-right:0px;
+}
+
+#item_list > li:nth-child(n+4){
+	margin-top:60px;
+}
+
+#item_list .img{
+	position:relative;
+}
+
+#item_list .img > img{
+	width:270px; height:270px;
+}
+
+#item_list .img > .buttons{
+	display:none;
+	position:absolute;
+	top:50%; left:50%;
+	transform:translate(-50%, -50%);
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+#item_list .img > .buttons > li{
+	float:left;
+	padding:5px;
+	font-size:0px;
+}
+
+#item_list .img > .buttons > li > a{
+	width:50px; height:50px;
+	display:inline-block;
+}
+
+#item_list .img > .buttons > li > .cart{
+	background:url("../../../../../resources/images/user/member/culture/main/buttons.png") -1px -1px no-repeat;
+}
+
+#item_list .img > .buttons > li > .cart:hover{
+	background:url("../../../../../resources/images/user/member/culture/main/buttons.png") -157px -1px no-repeat;
+}
+
+#item_list .img > .buttons > li > .payment{
+	background:url("../../../../../resources/images/user/member/culture/main/buttons.png") -105px -1px no-repeat;
+}
+
+#item_list .img > .buttons > li > .payment:hover{
+	background:url("../../../../../resources/images/user/member/culture/main/buttons.png") -261px -1px no-repeat;
+}
+
+#item_list .txt > *{
+	margin:0px;
+}
+
+#item_list .txt > p:nth-of-type(1){
+	margin-top:5px;
+}
+
+#item_list .txt > p:nth-of-type(2){
+	margin-top:10px;
+	font-size:18px; font-weight:bold;
+}

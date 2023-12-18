@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+#container{
+	width:820px; height:300px;
+	overflow:hidden;
+	margin:60px auto 0px auto;
+}
+
+
+/* left */
+#container > .left{
+	height:100%;
+	float:left;
+	overflow:hidden;
+	margin-right:30px;
+	border-top:2px solid #898987; border-bottom:2px solid #898987; 
+}
+
+.boxing{ margin-top:75px; }
+.login{ overflow:hidden; }
+.login > .input_field{ float:left; margin-right:2px; }
+.login > .login_button{ float:left; }
+
+.input_field > input{
+	width:347px; height:35px;
+	border:2px solid #b5b5b5;
+	padding:0 5px 0 50px;
+	font-size:12px;
+}
+
+.input_field > .id{ background:url("../../../../../resources/images/public/sprite_icon(cgv).png") no-repeat 12px -230px; }
+.input_field > .pw{ background:url("../../../../../resources/images/public/sprite_icon(cgv).png") no-repeat 12px -261px; }
+
+.login_button > button{
+	width:90px; height:75px;
+	line-height:69px;
+	padding:2px;
+	border:none;
+	background-color:#e71a0f;
+	cursor:pointer;
+}
+
+.login_button > button > span{
+	display:block;
+	border:1px solid #f07469;
+	font-family:"GGV_Font02"; font-size:14px; color:white;
+}
+
+.error_msg{
+	display:none;
+	margin-top:2px;
+}
+
+.error_msg > span{
+	font-family:"GGV_Font02"; font-size:13px;
+	color:red;
+}
+
+
+/* right */
+#container > .right{ float:left; }
