@@ -3,7 +3,7 @@
 ---
 
 <div align="center">
-   <img src="https://github.com/neck950728/GGV/assets/151998896/09630f49-30e8-4871-a801-b65a98f79bff" width="18%">
+   <img src="https://github.com/neck950728/GGV/assets/151998896/099efcb3-79f9-4c0a-a19f-28f7bd0a5635" width="18%">
    <h6><i>본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 제작되었습니다.</i></h6>
 </div>
 
@@ -89,24 +89,24 @@ CGV를 모티브로 한 클론 프로젝트를 진행하게 되었습니다.<br>
 ## :tv: <a id="screen-configuration">화면 구성</a>
 |메인|회원가입|
 |---|---|
-|<img src="https://github.com/neck950728/GGV/assets/151998896/ce906dcc-45d2-4807-bb8d-b2d373a884e4" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/4e8f6dbe-f590-4328-b639-304478cad22c" width="387.5">|
+|<img src="https://github.com/neck950728/GGV/assets/151998896/4fbebb3d-4e66-4f5c-87b4-4bbc68a92cea" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/83619f91-4871-44b4-b471-06be51be2ffa" width="387.5">|
 
 |로그인|무비차트|
 |---|---|
-|<img src="https://github.com/neck950728/GGV/assets/151998896/f3c05a18-7a60-446a-ba5b-3798ec1b26a2" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/bfd4e8d5-fe51-4353-9e8a-0ec53be0c070" width="387.5">|
+|<img src="https://github.com/neck950728/GGV/assets/151998896/06fe8b19-f529-4ab1-a6ca-dbb16e9b9524" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/7090cd42-7afc-403a-bd7f-bd615fbdc52b" width="387.5">|
 
 |영화 상세|트레일러|
 |---|---|
-|<img src="https://github.com/neck950728/GGV/assets/151998896/b15e8cb6-5d25-435b-8e66-f97b0ac6a9e8" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/95aa880c-9ba8-44cc-944a-6c3659899ea6" width="387.5">|
+|<img src="https://github.com/neck950728/GGV/assets/151998896/95414cbf-a3f9-4b91-a23d-40b39e55b5fc" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/621ed394-5422-43ed-a140-3046045f22f6" width="387.5">|
 
 |예매|컬처|
 |---|---|
-|<img src="https://github.com/neck950728/GGV/assets/151998896/5fc2423e-a426-4ca2-a487-e3557299286a" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/76149d8a-af62-4d6a-bfa6-8e1006737510" width="387.5">|
+|<img src="https://github.com/neck950728/GGV/assets/151998896/2f6cdf0c-a72a-46d2-8829-dfb72e1a9b17" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/a3c1e0d1-f0d3-439f-a2b6-8af77741c953" width="387.5">|
 
 |마이페이지|고객센터|
 |---|---|
-<img src="https://github.com/neck950728/GGV/assets/151998896/5a4e6c2d-864a-42df-a029-349779722403" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/c927ad75-9067-4696-ac06-9dd23f3cde74" width="387.5">|
+<img src="https://github.com/neck950728/GGV/assets/151998896/7e24f234-93df-407c-a4df-52c74403998c" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/9a60c248-9588-430c-a0ec-075679ab4393" width="387.5">|
 
 |영화 등록/수정|영화 등록(Excel)|
 |---|---|
-<img src="https://github.com/neck950728/GGV/assets/151998896/540c2b3f-decc-449b-a936-12eccd4671d1" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/6e6b4168-37a7-4bbc-bd9d-41632723e9d4" width="387.5">|
+<img src="https://github.com/neck950728/GGV/assets/151998896/a00f94a8-3328-4f3c-a0ca-53e7f9720b60" width="387.5">|<img src="https://github.com/neck950728/GGV/assets/151998896/7854d842-56b3-4b65-91c8-fcd64e1e76aa" width="387.5">|
