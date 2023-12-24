@@ -5,10 +5,15 @@
 
 ---
 
-두 가지 방식을 사용하여 구현해보았습니다.
-><p><strong>Version 1</strong> : URL Stream + Apache POI</p>
-><p><strong>Version 2</strong> : Selenium + JXLS</p>
+<h4>두 가지 방식을 사용하여 구현해보았습니다.</h4>
+
+>### Version 1
+>>###### 크롤링 : URL Stream
+>>###### 엑셀화 : Apache POI
+>### Version 2
+>>###### 크롤링 : Selenium
+>>###### 엑셀화 : JXLS
 
 <br>
 
-<img src="https://github.com/neck950728/GGV/assets/151998896/cfda3179-4e4b-44ad-b173-a35c96a206af">
+<img src="https://github.com/neck950728/GGV/assets/151998896/39a51d43-bfdf-4503-ad2c-eb1bf9111ac6">
