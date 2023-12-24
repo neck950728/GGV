@@ -82,7 +82,7 @@ CGV를 모티브로 한 클론 프로젝트를 진행하게 되었습니다.<br>
 
 |:hammer: Library & API|
 |:---:|
-```jQuery```, ```Jackson Databind```, ```JSON Simple```, ```Gson``` <br> ```Commons FileUpload```, ```Summernote```, ```Google Charts```, ```Javax Mail``` <br> ```CoolSMS```, ```JXLS```, ```Lucy XSS Servlet Filter```
+```jQuery```, ```Jackson Databind```, ```JSON Simple```, ```Gson``` <br> ```Commons FileUpload```, ```Summernote```, ```Google Charts```, ```Selenium``` <br> ```JXLS```, ```Javax Mail```, ```CoolSMS```, ```Lucy XSS Servlet Filter```
 
 <br><br>
 
