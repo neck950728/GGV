@@ -16,8 +16,13 @@ import net.nurigo.java_sdk.exceptions.CoolsmsException;
 public class Phone {
 	@Value("${api_key}")
 	private String api_key;
+	
 	@Value("${api_secret}")
 	private String api_secret;
+	
+	@Value("${sender_phoneNum}")
+	private String sender_phoneNum;
+	
 	private Message coolSms;
 	
 	@Autowired
@@ -31,7 +36,7 @@ public class Phone {
 		
 		HashMap<String, String> params = new HashMap<String, String>();
 	    params.put("to", recipient_phoneNum);
-	    params.put("from", "01057796682");
+	    params.put("from", sender_phoneNum);
 	    params.put("type", "SMS");
 	    params.put("text", msg);
 	    // params.put("app_version", "test app 1.2"); // application name and version

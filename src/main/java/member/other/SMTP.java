@@ -26,10 +26,13 @@ import utility.HttpServletReq;
 public class SMTP {
 	@Value("${smtp_id}")
 	private String id;
+	
 	@Value("${smtp_pw}")
 	private String pw;
 	
-	private String from = "plz_reply@naver.com"; 
+	@Value("${sender_email}")
+	private String from;
+	
 	private MimeMessage msg;
 	
 	@Autowired
@@ -45,8 +48,8 @@ public class SMTP {
 		msg = new MimeMessage(session);
 	}
 	
-	public void send_mail(String recipient, String id, String email_auth_key) {
-		String to = recipient;
+	public void send_mail(String recipient_email, String id, String email_auth_key) {
+		String to = recipient_email;
 		
 		try {
 			msg.setSentDate(new Date()); // 전송 날짜
@@ -74,8 +77,8 @@ public class SMTP {
 		}
 	}
 	
-	public int send_mail(String recipient) {
-		String to = recipient;
+	public int send_mail(String recipient_email) {
+		String to = recipient_email;
 		
 		int authNum = (int)(Math.random() * (999999 - 100000 + 1)) + 100000;
 		
