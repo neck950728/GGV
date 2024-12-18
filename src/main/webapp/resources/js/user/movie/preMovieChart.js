@@ -29,7 +29,7 @@ $(function(){
 		var premier = value.replace(/\./gi, ""); // 마침표 제거(https://blog.naver.com/dngu_icdi/221453472122 참고)
 		$("#preMovieChart").append("<ul class='" + premier + "'><h1>" + value + "</h1></ul>");
 		
-		var movieList = g_preMovieChart[value]; // preMovieChart.value가 아닌 이유 : https://blog.naver.com/dngu_icdi/221146006489 마지막 내용 참고
+		var movieList = g_preMovieChart[value]; // preMovieChart.value가 아닌 이유 : https://blog.naver.com/dngu_icdi/221146006489 다섯 번째 내용 참고
 		$.each(movieList, function(index, value){
 			var movie = value;
 			var result = check({ "title":movie.title, "grade":movie.grade, "screeningInfo_list":movie.screeningInfo_list, "code":movie.code });
