@@ -80,6 +80,8 @@ CGV를 모티브로 한 클론 프로젝트를 진행하게 되었습니다.
 
 <img src="https://img.shields.io/badge/OS-121011?style=for-the-badge"> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows10&logoColor=white">
 
+<img src="https://img.shields.io/badge/Hosting-121011?style=for-the-badge"> <img src="https://img.shields.io/badge/cafe24-0265F4?style=for-the-badge">
+
 |:hammer: Library & API|
 |:---:|
 ```jQuery```, ```Jackson Databind```, ```JSON Simple```, ```Gson``` <br> ```Commons FileUpload```, ```Summernote```, ```Google Charts```, ```Selenium``` <br> ```JXLS```, ```Javax Mail```, ```CoolSMS```, ```Lucy XSS Servlet Filter```
