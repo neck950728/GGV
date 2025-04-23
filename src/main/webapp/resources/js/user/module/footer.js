@@ -6,7 +6,7 @@ function setPosition(start_point, end_point){
 	// ---------------------------------------------------------------------
 	
 	// ------------------------------------------ top ------------------------------------------
-	var scrollTop = $(window).scrollTop(); // /GGV/참고 자료/scrollTop & scrollBottom.png 참고
+	var scrollTop = $(window).scrollTop();
 	var scrollBottom = scrollTop + $(window).height();
 	
 	if(scrollTop >= start_point){
